@@ -1,0 +1,99 @@
+\documentclass[14pt, openany, titlepage]{report} % Explicitly use openany and titlepage
+\usepackage[utf8]{inputenc}
+\usepackage[italian,english]{babel}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[italian]{minitoc}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{placeins}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{adjustbox} % Pacchetto per ridimensionare automaticamente
+\usepackage{graphicx} % Per il ridimensionamento
+\usepackage{lscape}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+
+% Set link colors without borders
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\lstset{frame=tb,
+    language=Java,
+    numbers=left,
+    keywordstyle=\color{blue},
+    alsoletter={.}
+}
+\graphicspath{ {./Figure/} }
+
+
+% Minimize additional blank pages
+\let\cleardoublepage\clearpage % Suppresses new page on odd side
+\flushbottom % Avoid vertical blank space between paragraphs
+
+% Title Page
+\begin{document}
+\selectlanguage{italian}
+
+\begin{titlepage}
+\begin{center}
+    \begin{figure}
+        \includegraphics[width=3.5cm, height=3.5cm]{unisa.png}
+        \centering
+    \end{figure}
+    {\Large Università degli Studi di Salerno}\\[0.2truecm]
+    {\large Dipartimento di Informatica\\Corso di Laurea Triennale in Informatica}\\
+    \hrulefill
+    \vfill
+    {\large Progetto Calcolo Probabilità Statistica Matematica\\(CPSM)}\\[0.1truecm]
+    \vfill\vfill
+    {\LARGE {\bf Indagine Statistica sulla\\[0.1truecm]Ricerca di Lavoro tra Laureati Italiani}}
+    \vfill\vfill
+    
+    \hfill  \textbf{Tozza Gennaro Carmine}
+    \centerline{\hfill Matricola: 0512120382}
+    
+    \vfill
+    \hrulefill 
+    \begin{center} Anno Accademico 2024-2025 \end{center}
+\end{center}
+\end{titlepage}
+
+% Suppress page break after table of contents
+\tableofcontents
+
+\chapter{Introduzione}
+\footnote{\url{https://siqual.istat.it/SIQual/visualizza.do?id=0032700&refresh=true&language=IT}}L’indagine è rivolta a un campione di laureati e approfondisce la loro condizione e il loro percorso occupazionale a distanza di alcuni anni dal conseguimento del titolo. \\\\
+Rileva informazioni sulla tipologia di attività lavorativa svolta dai laureati, sulla professione, sulla retribuzione e sulla loro soddisfazione per il lavoro svolto, sul settore in cui lavorano e sull'utilizzo nel lavoro delle competenze acquisite all'università.\\\\
+L’indagine fa parte del sistema di rilevazioni sulla transizione istruzione-lavoro, che comprende anche le indagini sull'inserimento professionale dei dottori di ricerca e sui percorsi di studio e di lavoro dei diplomati di scuola secondaria di II grado.\\\\
+
+
+
+
+
+
+
+\end{document}
