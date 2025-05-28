@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1748431895.59075 "c:/Users/genna/Desktop/statistical_project/report/report.tex" "report.pdf" "report" 1748431900.42733 0
+["pdflatex"] 1748456526.21782 "c:/Users/genna/Desktop/statistical_project/report/report.tex" "report.pdf" "report" 1748456532.66402 0
   "C:/Users/genna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1744455186 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/genna/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1713869747 24236006 cc9cfa1ecd00d38eef937e4db279dc86 ""
   "C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
@@ -368,13 +368,13 @@
   "C:/Users/genna/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/genna/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "Figure/unisa.png" 1728933209 1646182 2389ec9be51a75711c618e9e19f11152 ""
-  "c:/Users/genna/Desktop/statistical_project/report/report.tex" 1748431894 4649 d413be7eb0d6b66261be94b1d93e803f ""
-  "report.aux" 1748431899 1144 9183f68f8e3b825f87ffb50e7c270e6b "pdflatex"
-  "report.mtc" 1748431896 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.mtc0" 1748431896 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.out" 1748431899 267 857b3c34c393765e5fe58746b0abc513 "pdflatex"
-  "report.tex" 1748431894 4649 d413be7eb0d6b66261be94b1d93e803f ""
-  "report.toc" 1748431899 207 3239d6bc43f1ea6b4bed1a0297caf0b6 "pdflatex"
+  "c:/Users/genna/Desktop/statistical_project/report/report.tex" 1748456516 5061 3dacead7899d34fb9bedf1ab4f91f97e ""
+  "report.aux" 1748456531 1144 9183f68f8e3b825f87ffb50e7c270e6b "pdflatex"
+  "report.mtc" 1748456527 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.mtc0" 1748456527 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.out" 1748456531 267 857b3c34c393765e5fe58746b0abc513 "pdflatex"
+  "report.tex" 1748456516 5061 3dacead7899d34fb9bedf1ab4f91f97e ""
+  "report.toc" 1748456531 207 3239d6bc43f1ea6b4bed1a0297caf0b6 "pdflatex"
   (generated)
   "report.aux"
   "report.log"
