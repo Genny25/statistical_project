@@ -49,7 +49,6 @@
 }
 \graphicspath{ {./Figure/} }
 
-
 % Minimize additional blank pages
 \let\cleardoublepage\clearpage % Suppresses new page on odd side
 \flushbottom % Avoid vertical blank space between paragraphs
@@ -90,9 +89,23 @@ Il progetto consiste nello sviluppo di un software che analizzi i dati statistic
 \footnote{\url{https://siqual.istat.it/SIQual/visualizza.do?id=0032700&refresh=true&language=IT}}L’indagine è rivolta a un campione di laureati e approfondisce la loro condizione e il loro percorso occupazionale a distanza di alcuni anni dal conseguimento del titolo. \\\\
 Rileva informazioni sulla tipologia di attività lavorativa svolta dai laureati, sulla professione, sulla retribuzione e sulla loro soddisfazione per il lavoro svolto, sul settore in cui lavorano e sull'utilizzo nel lavoro delle competenze acquisite all'università.\\\\
 L’indagine fa parte del sistema di rilevazioni sulla transizione istruzione-lavoro, che comprende anche le indagini sull'inserimento professionale dei dottori di ricerca e sui percorsi di studio e di lavoro dei diplomati di scuola secondaria di II grado.\\\\
+\noindent
+Per l'analisi dei dati è stato scelto l'ambiente di calcolo statistico \textbf{R}. \\
+R fornisce un'ampia varietà di tecniche statistiche (modellazione lineare e non lineare, test statistici classici, analisi delle serie temporali, classificazione, clustering,...)
+e grafiche ed è altamente estensibile.\\\\
+\noindent
+Uno dei punti di forza di R è la facilità con cui possono essere prodotti grafici ben progettati e di qualità per la pubblicazione, 
+compresi simboli matematici e formule se necessario.\\\\\\\\
+\noindent
+Per semplificare l'analisi, si è scelto di lavorare non sull'intero dataset, 
+ma su un sottoinsieme filtrato di dati, relativo ai laureati che non possedevano 
+già una laurea di II livello\footnote{Il titolo di studio conseguito dopo aver completato un corso di 
+laurea magistrale biennale o a ciclo unico, comprese le lauree quadriennali o quinquennali del vecchio ordinamento} 
+e che erano alla ricerca di lavoro. \\\\
+\noindent
+Se si desidera approfondire l'analisi in modo più dettagliato e specifico si può far riferimento al seguente link: \url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0820EDU,1.0/STUD_CHAR_TRWORK/DCCV_LAU_RIC/IT1,612_937_DF_DCCV_LAU_RIC_1,1.0}
 
-
-
+\chapter{Tabelle delle frequenze}
 
 
 
