@@ -1,11 +1,13 @@
 library("tidyverse")
 require("tidyverse")
+library("dplyr")
 
-# viene caricato il dataset
-dati <- read.csv("dati_istat_filtrati.csv")
+dati <- read.csv("dati_istat_filtrati.csv") # viene caricato il dataset
+dati <- dati %>% select(Sesso, Tipo.di.laurea, Luogo.di.lavoro, Osservazione) # vengono selezionate solo le colonne che ci interessano
 
-# frequenze assolute e relative e anche in forma cumulativa, suddise per categorie
+# vengono calcolate le frequenze assolute, relative e anche in forma cumulativa, suddise per categorie
 
+# sesso
 freq_sesso_cum <- dati %>%
   count(Sesso, name = "Frequenza_Assoluta") %>%
   mutate(
@@ -15,7 +17,8 @@ freq_sesso_cum <- dati %>%
   )
 
 print(freq_sesso_cum)
-#---------------------------------------------------------------------------------
+
+# tipo di laurea
 freq_laurea_cum <- dati %>%
   count(`Tipo.di.laurea`, name = "Frequenza_Assoluta") %>%
   arrange(desc(`Tipo.di.laurea`)) %>%  # Ordine decrescente per cumulate
@@ -26,7 +29,8 @@ freq_laurea_cum <- dati %>%
   )
 
 print(freq_laurea_cum)
-#---------------------------------------------------------------------------------
+
+# luogo di lavoro
 freq_luogo_cum <- dati %>%
   count(`Luogo.di.lavoro`, name = "Frequenza_Assoluta") %>%
   arrange(`Luogo.di.lavoro`) %>%  # Ordine alfabetico
@@ -37,5 +41,6 @@ freq_luogo_cum <- dati %>%
   )
 
 print(freq_luogo_cum)
-#---------------------------------------------------------------------------------
+
+
 
