@@ -32,6 +32,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage[svgnames]{xcolor}
+\usepackage{booktabs}
 
 % Set link colors without borders
 \hypersetup{
@@ -47,6 +49,17 @@
     keywordstyle=\color{blue},
     alsoletter={.}
 }
+
+\lstset{language=R,
+    basicstyle=\small\ttfamily,
+    stringstyle=\color{DarkGreen},
+    otherkeywords={0,1,2,3,4,5,6,7,8,9},
+    morekeywords={TRUE,FALSE},
+    deletekeywords={data,frame,length,as,character},
+    keywordstyle=\color{blue},
+    commentstyle=\color{DarkGreen},
+}
+
 \graphicspath{ {./Figure/} }
 
 
@@ -108,11 +121,70 @@ Per approfondire l'analisi con dati dettagliati e specifici, è possibile consul
 \url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0820EDU,1.0/STUD_CHAR_TRWORK/DCCV_LAU_RIC/IT1,612_937_DF_DCCV_LAU_RIC_1,1.0}\\\\
 \noindent
 Il dataset in formato CSV è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\
- Il formato scelto (CSV) permette un'agevole manipolazione dei dati, essendo compatibile con la maggior parte dei software statistici e
-  dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni
+Il formato scelto (CSV) permette un'agevole manipolazione dei dati, essendo compatibile con la maggior parte dei software statistici e
+dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.
+
+\begin{center}
+\footnotesize % Riduci la dimensione del font
+\setlength{\tabcolsep}{3pt} % Riduci lo spazio tra le colonne
+\begin{minipage}{\textwidth}
+\resizebox{\textwidth}{!}{ % Ridimensiona automaticamente
+\begin{tabular}{@{}lccccccccc@{}}
+\toprule
+Freq. & Terr. & Indicatore & Sesso & Tipo laurea & Luogo lavoro & Ricerca & Anno & Periodo & Oss. \\
+\midrule
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Solo Italia & Totale & 2011 & 2015 & 7093 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Solo estero & Totale & 2011 & 2015 & 816 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Sia italia sia estero & Totale & 2011 & 2015 & 18230 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Tutte le voci & Totale & 2011 & 2015 & 26139 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Solo Italia & Totale & 2011 & 2015 & 5322 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Solo estero & Totale & 2011 & 2015 & 677 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Sia italia sia estero & Totale & 2011 & 2015 & 11466 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Tutte le voci & Totale & 2011 & 2015 & 17465 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Solo Italia & Totale & 2011 & 2015 & 12415 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Solo estero & Totale & 2011 & 2015 & 1493 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Sia italia sia estero & Totale & 2011 & 2015 & 29695 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Tutte le voci & Totale & 2011 & 2015 & 43604 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Solo Italia & Totale & 2011 & 2015 & 23561 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Solo estero & Totale & 2011 & 2015 & 821 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Sia italia sia estero & Totale & 2011 & 2015 & 21309 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Tutte le voci & Totale & 2011 & 2015 & 45691 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Solo Italia & Totale & 2011 & 2015 & 16264 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Solo estero & Totale & 2011 & 2015 & 433 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Sia italia sia estero & Totale & 2011 & 2015 & 13304 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Tutte le voci & Totale & 2011 & 2015 & 30002 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Solo Italia & Totale & 2011 & 2015 & 39825 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Solo estero & Totale & 2011 & 2015 & 1254 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Sia italia sia estero & Totale & 2011 & 2015 & 34613 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Tutte le voci & Totale & 2011 & 2015 & 75693 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Solo Italia & Totale & 2011 & 2015 & 30654 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Solo estero & Totale & 2011 & 2015 & 1637 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Sia italia sia estero & Totale & 2011 & 2015 & 39538 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Tutte le voci & Totale & 2011 & 2015 & 71830 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Solo Italia & Totale & 2011 & 2015 & 21586 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Solo estero & Totale & 2011 & 2015 & 1111 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Sia italia sia estero & Totale & 2011 & 2015 & 24770 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Tutte le voci & Totale & 2011 & 2015 & 47467 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Solo Italia & Totale & 2011 & 2015 & 52240 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Solo estero & Totale & 2011 & 2015 & 2748 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Sia italia sia estero & Totale & 2011 & 2015 & 64309 \\
+Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Tutte le voci & Totale & 2011 & 2015 & 119297 \\
+\bottomrule
+\end{tabular}
+}
+\end{minipage}
+\end{center}
+
+\normalsize
+
 
 \chapter{Tabelle delle frequenze}
 
+%\begin{center}
+%\begin{lstlisting}[breaklines=true]
+% QUANDO E PRONTO METTI IL CODICE QUA E POI DOPO LE IMMAGINI DEI GRAFICI
+%\end{lstlisting}  
+%\end{center}
 
 
 
