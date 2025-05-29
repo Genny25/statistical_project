@@ -83,7 +83,7 @@
     \vfill
     {\large Progetto Calcolo Probabilità Statistica Matematica\\(CPSM)}\\[0.1truecm]
     \vfill\vfill
-    {\LARGE {\bf Indagine Statistica sulla\\[0.1truecm]Ricerca di Lavoro tra Laureati Italiani}}
+    {\LARGE {\bf Indagine Statistica sulle\\[0.1truecm]Morti in incidenti stradali}}
     \vfill\vfill
     
     \hfill  \textbf{Tozza Gennaro Carmine}
@@ -99,94 +99,224 @@
 \tableofcontents
 
 \chapter{Introduzione}
-Il progetto consiste nello sviluppo di un software che analizzi i dati statistici relativi alla ricerca di lavoro tra i laureati italiani che hanno conseguito il titolo nel 2011, con dati raccolti nel 2015. \\\\
-\footnote{\url{https://siqual.istat.it/SIQual/visualizza.do?id=0032700&refresh=true&language=IT}}L’indagine è rivolta a un campione di laureati e approfondisce la loro condizione e il loro percorso occupazionale a distanza di alcuni anni dal conseguimento del titolo. \\\\
-Rileva informazioni sulla tipologia di attività lavorativa svolta dai laureati, sulla professione, sulla retribuzione e sulla loro soddisfazione per il lavoro svolto, sul settore in cui lavorano e sull'utilizzo nel lavoro delle competenze acquisite all'università.\\\\
-L’indagine fa parte del sistema di rilevazioni sulla transizione istruzione-lavoro, che comprende anche le indagini sull'inserimento professionale dei dottori di ricerca e sui percorsi di studio e di lavoro dei diplomati di scuola secondaria di II grado.\\\\
+\section{Problematica}
+Gli \textbf{incidenti stradali} costituiscono una delle principali emergenze 
+di sanità pubblica, in quanto responsabili ogni anno di un elevato 
+numero di decessi, in particolare tra i giovani, e di gravi conseguenze
+ in termini di disabilità temporanee e permanenti, oltre al drammatico impatto umano e psicologico sulle vittime e 
+ sulle loro famiglie. 
+\noindent
+
+\section{Scopo del progetto}
+Il progetto consiste in un’indagine statistica \footnote{\url{https://siqual.istat.it/SIQual/visualizza.do?id=7777778&refresh=true&language=IT}}sugli incidenti stradali verificatisi sulla rete stradale del territorio nazionale, tra il 2010 e il 2023 verbalizzati da un'autorità di Polizia o dai Carabinieri, 
+avvenuti su una strada aperta alla circolazione pubblica e che hanno causato lesioni a persone, morti (entro il 30° giorno) e/o feriti, con il coinvolgimento 
+di almeno un veicolo. \\\\
+\noindent
+La rilevazione è condotta correntemente dall’Istat, con la compartecipazione dell'ACI e di numerosi Enti pubblici istituzionali, 
+è a carattere totale e a cadenza mensile (inserita tra le rilevazioni di interesse pubblico nel Programma Statistico Nazionale - PSN - IST00142). \\\\
 \noindent
 Per l'analisi dei dati è stato scelto l'ambiente di calcolo statistico \textbf{R}. \\
-R fornisce un'ampia varietà di tecniche statistiche (modellazione lineare e non lineare, test statistici classici, analisi delle serie temporali, classificazione, clustering,...)
+R fornisce un'ampia varietà di tecniche statistiche (modellazione lineare e non lineare, test statistici classici, analisi delle serie temporali, classificazione, \dots)
 e grafiche ed è altamente estensibile.\\\\
 \noindent
 Uno dei punti di forza di R è la facilità con cui possono essere prodotti grafici ben progettati e di qualità per la pubblicazione, 
-compresi simboli matematici e formule se necessario.\\\\\\\\
+compresi simboli matematici e formule se necessario.\\\\
 \noindent
 Per semplificare l'analisi, si è scelto di lavorare non sull'intero dataset, 
-ma su un sottoinsieme filtrato di dati, relativo ai laureati che non possedevano 
-già una laurea di II livello\footnote{Il titolo di studio conseguito dopo aver completato un corso di 
-laurea magistrale biennale o a ciclo unico, comprese le lauree quadriennali o quinquennali del vecchio ordinamento} 
-e che erano alla ricerca di lavoro. \\\\
+ma su un sottoinsieme filtrato di dati, relativo alle morti per incidenti stradali che riguardano solo i conducenti di età compresa tra i 21 e i 24 anni.\\\\
 \noindent
 Per approfondire l'analisi con dati dettagliati e specifici, è possibile consultare il dataset direttamente sul sito dell'ISTAT al seguente link:
-\url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0820EDU,1.0/STUD_CHAR_TRWORK/DCCV_LAU_RIC/IT1,612_937_DF_DCCV_LAU_RIC_1,1.0}\\\\
+\url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0810HEA,1.0/HEA_ROAD/IT1,41_270_DF_DCIS_MORTIFERITISTR1_1,1.0}\\\\
 \noindent
 Il dataset in formato CSV è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\
 Il formato scelto (CSV) permette un'agevole manipolazione dei dati, essendo compatibile con la maggior parte dei software statistici e
-dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.
+dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.\\\\
 
-\begin{center}
-\footnotesize % Riduci la dimensione del font
-\setlength{\tabcolsep}{3pt} % Riduci lo spazio tra le colonne
-\begin{minipage}{\textwidth}
-\resizebox{\textwidth}{!}{ % Ridimensiona automaticamente
-\begin{tabular}{@{}lccccccccc@{}}
+\begin{table}[h]
+\centering
+\begin{minipage}{\linewidth} 
+\footnotesize
+\centering
+\scalebox{0.9}{ % Riduzione leggera
+\begin{tabular}{@{}lrrrrrrrrrrrrrr@{}}
 \toprule
-Freq. & Terr. & Indicatore & Sesso & Tipo laurea & Luogo lavoro & Ricerca & Anno & Periodo & Oss. \\
+\textbf{Intersezione} & \textbf{'10} & \textbf{'11} & \textbf{'12} & \textbf{'13} & \textbf{'14} & \textbf{'15} & \textbf{'16} & \textbf{'17} & \textbf{'18} & \textbf{'19} & \textbf{'20} & \textbf{'21} & \textbf{'22} & \textbf{'23} \\
 \midrule
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Solo Italia & Totale & 2011 & 2015 & 7093 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Solo estero & Totale & 2011 & 2015 & 816 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Sia italia sia estero & Totale & 2011 & 2015 & 18230 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di I livello & Tutte le voci & Totale & 2011 & 2015 & 26139 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Solo Italia & Totale & 2011 & 2015 & 5322 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Solo estero & Totale & 2011 & 2015 & 677 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Sia italia sia estero & Totale & 2011 & 2015 & 11466 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Laurea di II livello & Tutte le voci & Totale & 2011 & 2015 & 17465 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Solo Italia & Totale & 2011 & 2015 & 12415 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Solo estero & Totale & 2011 & 2015 & 1493 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Sia italia sia estero & Totale & 2011 & 2015 & 29695 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Maschi & Totale & Tutte le voci & Totale & 2011 & 2015 & 43604 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Solo Italia & Totale & 2011 & 2015 & 23561 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Solo estero & Totale & 2011 & 2015 & 821 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Sia italia sia estero & Totale & 2011 & 2015 & 21309 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di I livello & Tutte le voci & Totale & 2011 & 2015 & 45691 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Solo Italia & Totale & 2011 & 2015 & 16264 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Solo estero & Totale & 2011 & 2015 & 433 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Sia italia sia estero & Totale & 2011 & 2015 & 13304 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Laurea di II livello & Tutte le voci & Totale & 2011 & 2015 & 30002 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Solo Italia & Totale & 2011 & 2015 & 39825 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Solo estero & Totale & 2011 & 2015 & 1254 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Sia italia sia estero & Totale & 2011 & 2015 & 34613 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Femmine & Totale & Tutte le voci & Totale & 2011 & 2015 & 75693 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Solo Italia & Totale & 2011 & 2015 & 30654 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Solo estero & Totale & 2011 & 2015 & 1637 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Sia italia sia estero & Totale & 2011 & 2015 & 39538 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di I livello & Tutte le voci & Totale & 2011 & 2015 & 71830 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Solo Italia & Totale & 2011 & 2015 & 21586 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Solo estero & Totale & 2011 & 2015 & 1111 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Sia italia sia estero & Totale & 2011 & 2015 & 24770 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Laurea di II livello & Tutte le voci & Totale & 2011 & 2015 & 47467 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Solo Italia & Totale & 2011 & 2015 & 52240 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Solo estero & Totale & 2011 & 2015 & 2748 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Sia italia sia estero & Totale & 2011 & 2015 & 64309 \\
-Annuale & Italia & Laureati che non avevano già una laurea di II livello che cercano lavoro & Totale & Totale & Tutte le voci & Totale & 2011 & 2015 & 119297 \\
+Incrocio & 55 & 45 & 42 & 23 & 34 & 24 & 28 & 25 & 23 & 13 & 15 & 16 & 21 & 10 \\
+Rotatoria & 7 & 4 & 2 & 5 & 5 & 1 & 5 & 3 & 1 & 2 & 1 & 2 & -- & 3 \\
+Rettilineo & 92 & 102 & 89 & 82 & 96 & 95 & 66 & 70 & 60 & 72 & 66 & 69 & 69 & 74 \\
+Curva & 58 & 51 & 48 & 46 & 45 & 44 & 41 & 36 & 38 & 42 & 23 & 40 & 27 & 38 \\
+Dosso/Pend. & 2 & 7 & 2 & 4 & 2 & 3 & 5 & 1 & 2 & 3 & 2 & 4 & 3 & 1 \\
+Galleria & 1 & 1 & 1 & 1 & -- & 1 & 1 & 1 & -- & -- & 3 & 1 & -- & -- \\
+\midrule
+\textbf{Tot.} & 215 & 210 & 184 & 161 & 182 & 168 & 146 & 136 & 124 & 132 & 110 & 132 & 120 & 126 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
 }
 \end{minipage}
-\end{center}
+\end{table}
 
 \normalsize
 
 
 \chapter{Tabelle delle frequenze}
 
-%\begin{center}
-%\begin{lstlisting}[breaklines=true]
-% QUANDO E PRONTO METTI IL CODICE QUA E POI DOPO LE IMMAGINI DEI GRAFICI
-%\end{lstlisting}  
-%\end{center}
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# inclusione librerie
+library("tidyverse")
+require("tidyverse")
+library("dplyr")
+
+# viene caricato il dataset
+dati <- read.csv("dati_istat.csv")
+
+# filtraggio dati
+dati <- dati %>% select(Intersezione, TIME_PERIOD, Osservazione) 
+dati <- dati %>% 
+  filter(Intersezione != "Totale") 
+
+# 1. Frequenze assolute per intersezione dell'incidente
+freq_assolute <- aggregate(Osservazione ~ Intersezione, data=dati, sum)
+colnames(freq_assolute) <- c("Intersezione", "Frequenza_Assoluta")
+print(freq_assolute)
+
+# 2. Frequenze relative per intersezione dell'incidente
+totale <- sum(freq_assolute$Frequenza_Assoluta)
+freq_assolute$Frequenza_Relativa <- freq_assolute$Frequenza_Assoluta / totale
+print(freq_assolute)
+
+# 3. Frequenze cumulate assolute
+freq_assolute <- freq_assolute[order(-freq_assolute$Frequenza_Assoluta),]
+freq_assolute$Frequenza_Cumulata_Assoluta <- cumsum(freq_assolute$Frequenza_Assoluta)
+print(freq_assolute)
+
+# 4. Frequenze cumulate relative
+freq_assolute$Frequenza_Cumulata_Relativa <- freq_assolute$Frequenza_Cumulata_Assoluta / totale
+print(freq_assolute)
+\end{lstlisting}  
+\end{center}
+
+\noindent
+Output: 
+
+\begin{table}[H]
+\centering
+\begin{minipage}{\linewidth} 
+\footnotesize
+\centering
+\scalebox{0.9}{ % Riduzione leggera
+\begin{tabular}{@{}lrrrrrrrrrrrrrr@{}}
+\toprule
+\textbf{Intersezione} & \textbf{Freq. Assoluta} & \textbf{Freq. Relativa} & \textbf{Freq. Cum. Assoluta} & \textbf{Freq. Cum. Relativa} \\
+\midrule
+Rettilineo & 1102 & 0.5135 & 1102 & 0.5135 \\
+Curva & 577 & 0.2689 & 1679 & 0.7824 \\
+Incrocio & 374 & 0.1743 & 2053 & 0.9567 \\
+Dosso - pendenza - strettoia & 41 & 0.0191 & 2094 & 0.9758 \\
+Rotatoria & 41 & 0.0191 & 2135 & 0.9949 \\
+Galleria & 11 & 0.0051 & 2146 & 1.0000 \\
+\bottomrule
+\end{tabular}%
+}
+\end{minipage}
+\end{table}
+
+\normalsize
+
+\chapter{Rappresentazione dei dati mediante grafici}
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Visualizzazione grafica
+barplot(freq_assolute$Frequenza_Assoluta, 
+        names.arg = freq_assolute$Intersezione,
+        main = "Frequenze assolute per intersezione incidenti",
+        xlab = "Intersezione",
+        ylab = "Numero di morti",
+        col = "steelblue",
+        las = 2) # Etichette verticali
+\end{lstlisting}  
+\end{center}
+
+\begin{figure}[H] % H forza la posizione esatta
+    \centering
+    \includegraphics[width=13cm, height=7cm]{Rplot.png} % Adatta l'immagine alla larghezza del testo
+\end{figure}
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Converti TIME_PERIOD in fattore per mantenere l'ordine originale
+dati$TIME_PERIOD <- factor(dati$TIME_PERIOD, levels = unique(dati$TIME_PERIOD))
+
+# Calcola il numero totale di morti per anno
+morti_per_anno <- dati %>%
+  group_by(TIME_PERIOD) %>%
+  summarise(Totale_Morti = sum(Osservazione, na.rm = TRUE))
+
+# Crea il grafico a linee con tutti gli anni visibili
+ggplot(morti_per_anno, aes(x = TIME_PERIOD, y = Totale_Morti, group = 1)) +
+  geom_line(color = "steelblue", size = 1) +
+  geom_point(color = "steelblue", size = 2) +
+  labs(title = "Andamento del numero di morti per incidenti stradali",
+       x = "Anno",
+       y = "Numero di morti") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 8)) +  # Riduci dimensione testo
+  scale_x_discrete(breaks = levels(morti_per_anno$TIME_PERIOD))  # Mostra tutti i valori
+\end{lstlisting}  
+\end{center}
+
+\begin{figure}[H] % H forza la posizione esatta
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot01.png} % Adatta l'immagine alla larghezza del testo
+\end{figure}
 
 
+
+\chapter{Indici di posizione}
+
+\section{Media campionaria}
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+media_generale <- mean(dati$Osservazione, na.rm = TRUE)
+print(paste("Media campionaria generale:", round(media_generale, 2)))
+\end{lstlisting}  
+\end{center}
+
+\noindent
+Output: "Media campionaria generale: 27.51"
+
+\section{Mediana campionaria}
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+mediana_generale <- median(dati$Osservazione, na.rm = TRUE)
+print(paste("Mediana generale:", mediana_generale))
+\end{lstlisting}  
+\end{center}
+\noindent
+Output: "Mediana generale: 15.5"
+
+
+\section{Moda campionaria}
+
+\chapter{Indici di variabilità} 
+
+\section{Varianza campionaria}
+    
+\section{Deviazione standard campionaria}
+    
+\section{Scarto medio assoluto}
+
+\section{Ampiezza del campo di variazione}
+
+\section{Coefficiente di variazione}
+
+\chapter{Indici di forma}
+ 
+\section{Indice di asimmetria}
+
+\section{Indice di curtosi} 
 
 
 

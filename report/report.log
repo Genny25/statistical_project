@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.23)  29 MAY 2025 09:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.23)  30 MAY 2025 01:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -697,14 +697,22 @@ Package hyperref Info: Link coloring ON on input line 71.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<./Figure/unisa.png, id=11, 745.3446pt x 744.381pt>
+<./Figure/unisa.png, id=75, 745.3446pt x 744.381pt>
 File: ./Figure/unisa.png Graphic file (type png)
 <use ./Figure/unisa.png>
 Package pdftex.def Info: ./Figure/unisa.png  used on input line 77.
 (pdftex.def)             Requested size: 99.58223pt x 99.57843pt.
  [1
 
-{C:/Users/genna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Figure/unisa.png>] (report.toc)
+{C:/Users/genna/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Figure/unisa.png>] (report.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (C:\Users\genna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+ (C:\Users\genna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write7
 \openout7 = `report.toc'.
 
@@ -717,77 +725,105 @@ l.101 \chapter
 
 ]
 Capitolo 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 103.
-(C:\Users\genna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 103.
- (C:\Users\genna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
-[][][][][]$\OT1/cmtt/m/n/8 https : / / siqual . istat . it / SIQual / visualizza . do ? id = 0032700 & refresh = true &
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+[][][][][]$\OT1/cmtt/m/n/8 https : / / siqual . istat . it / SIQual / visualizza . do ? id = 7777778 & refresh = true &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Overfull \hbox (7.74693pt too wide) in paragraph at lines 111--134
+\OT1/cmtt/m/n/10 esploradati . istat . it / databrowser / # / it / dw / categories / IT1 ,[] Z0810HEA ,[] 1 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
-
- []
-
-
-Overfull \hbox (7.74693pt too wide) in paragraph at lines 102--126
-\OT1/cmtt/m/n/10 esploradati . istat . it / databrowser / # / it / dw / categories / IT1 ,[] Z0820EDU ,[] 1 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--126
+Underfull \hbox (badness 10000) in paragraph at lines 111--134
 
  []
 
 [2
 
-] [3]
+]
+Overfull \hbox (15.71422pt too wide) in paragraph at lines 155--156
+ [][] 
+ []
+
+[3]
 Capitolo 2.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 185.
+(C:\Users\genna\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+) [4
+
+]
+Overfull \hbox (73.88293pt too wide) in paragraph at lines 221--222
+ [][] 
+ []
+
+[5]
+Capitolo 3.
+<./Figure/Rplot.png, id=177, 752.5716pt x 301.125pt>
+File: ./Figure/Rplot.png Graphic file (type png)
+<use ./Figure/Rplot.png>
+Package pdftex.def Info: ./Figure/Rplot.png  used on input line 243.
+(pdftex.def)             Requested size: 369.88867pt x 199.17502pt.
+
+Overfull \hbox (24.88867pt too wide) in paragraph at lines 243--244
+ [][] 
+ []
+
+[6
+
+ <./Figure/Rplot.png>]
+<./Figure/Rplot01.png, id=194, 376.2858pt x 234.6366pt>
+File: ./Figure/Rplot01.png Graphic file (type png)
+<use ./Figure/Rplot01.png>
+Package pdftex.def Info: ./Figure/Rplot01.png  used on input line 272.
+(pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
+ [7 <./Figure/Rplot01.png>]
+Capitolo 4.
+[8
+
+]
+Capitolo 5.
+[9
+
+]
+Capitolo 6.
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the report.maf file.
@@ -808,7 +844,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the report.log file.
 
-[4
+[10
 
 ] (report.aux)
  ***********
@@ -816,20 +852,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 857B3C34C393765E5FE58746B0ABC513;267.
+(rerunfilecheck)             Checksum: 6D00432FAE712BEDF815678D42DC590B;2919.
  ) 
 Here is how much of TeX's memory you used:
- 19437 strings out of 474424
- 315791 string characters out of 5741739
- 1980496 words of memory out of 5000000
- 41446 multiletter control sequences out of 15000+600000
- 570537 words of font info for 82 fonts, out of 8000000 for 9000
+ 20616 strings out of 474424
+ 328598 string characters out of 5741739
+ 2106496 words of memory out of 5000000
+ 42526 multiletter control sequences out of 15000+600000
+ 571942 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,409b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on report.pdf (5 pages, 1634648 bytes).
+ 75i,12n,79p,401b,2797s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\genna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\genna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (11 pages, 1731449 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 160 words of extra memory for PDF output out of 10000 (max. 10000000)
 
