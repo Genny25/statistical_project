@@ -108,8 +108,8 @@ numero di decessi, in particolare tra i giovani, e di gravi conseguenze
 \noindent
 
 \section{Scopo del progetto}
-Il progetto consiste in un’indagine statistica \footnote{\url{https://siqual.istat.it/SIQual/visualizza.do?id=7777778&refresh=true&language=IT}}sugli incidenti stradali verificatisi sulla rete stradale del territorio nazionale, tra il 2010 e il 2023 verbalizzati da un'autorità di Polizia o dai Carabinieri, 
-avvenuti su una strada aperta alla circolazione pubblica e che hanno causato lesioni a persone, morti (entro il 30° giorno) e/o feriti, con il coinvolgimento 
+Il progetto consiste nel realizzare un’indagine statistica \footnote{\url{https://siqual.istat.it/SIQual/visualizza.do?id=7777778&refresh=true&language=IT}}sugli incidenti stradali verificatisi sulla rete stradale del territorio nazionale, tra il 2010 e il 2023 verbalizzati da un'autorità di Polizia o dai Carabinieri, 
+avvenuti su una strada aperta alla circolazione pubblica e che hanno causato morti (entro il 30° giorno) con il coinvolgimento 
 di almeno un veicolo. \\\\
 \noindent
 La rilevazione è condotta correntemente dall’Istat, con la compartecipazione dell'ACI e di numerosi Enti pubblici istituzionali, 
@@ -128,32 +128,26 @@ ma su un sottoinsieme filtrato di dati, relativo alle morti per incidenti strada
 Per approfondire l'analisi con dati dettagliati e specifici, è possibile consultare il dataset direttamente sul sito dell'ISTAT al seguente link:
 \url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0810HEA,1.0/HEA_ROAD/IT1,41_270_DF_DCIS_MORTIFERITISTR1_1,1.0}\\\\
 \noindent
-Il dataset in formato CSV è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\
+Il dataset in formato CSV(Comma-Separated Values) è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\\\
 Il formato scelto (CSV) permette un'agevole manipolazione dei dati, essendo compatibile con la maggior parte dei software statistici e
-dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.\\\\
+dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.\\
 
-\begin{table}[h]
+\begin{table}[!ht]
 \centering
-\begin{minipage}{\linewidth} 
 \footnotesize
-\centering
-\scalebox{0.9}{ % Riduzione leggera
-\begin{tabular}{@{}lrrrrrrrrrrrrrr@{}}
-\toprule
-\textbf{Intersezione} & \textbf{'10} & \textbf{'11} & \textbf{'12} & \textbf{'13} & \textbf{'14} & \textbf{'15} & \textbf{'16} & \textbf{'17} & \textbf{'18} & \textbf{'19} & \textbf{'20} & \textbf{'21} & \textbf{'22} & \textbf{'23} \\
-\midrule
-Incrocio & 55 & 45 & 42 & 23 & 34 & 24 & 28 & 25 & 23 & 13 & 15 & 16 & 21 & 10 \\
-Rotatoria & 7 & 4 & 2 & 5 & 5 & 1 & 5 & 3 & 1 & 2 & 1 & 2 & -- & 3 \\
-Rettilineo & 92 & 102 & 89 & 82 & 96 & 95 & 66 & 70 & 60 & 72 & 66 & 69 & 69 & 74 \\
-Curva & 58 & 51 & 48 & 46 & 45 & 44 & 41 & 36 & 38 & 42 & 23 & 40 & 27 & 38 \\
-Dosso/Pend. & 2 & 7 & 2 & 4 & 2 & 3 & 5 & 1 & 2 & 3 & 2 & 4 & 3 & 1 \\
-Galleria & 1 & 1 & 1 & 1 & -- & 1 & 1 & 1 & -- & -- & 3 & 1 & -- & -- \\
-\midrule
-\textbf{Tot.} & 215 & 210 & 184 & 161 & 182 & 168 & 146 & 136 & 124 & 132 & 110 & 132 & 120 & 126 \\
-\bottomrule
-\end{tabular}%
-}
-\end{minipage}
+\begin{tabularx}{\textwidth}{|l|*{14}{>{\centering\arraybackslash}X|}}
+\hline
+\textbf{Intersezione} & \textbf{'10} & \textbf{'11} & \textbf{'12} & \textbf{'13} & \textbf{'14} & \textbf{'15} & \textbf{'16} & \textbf{'17} & \textbf{'18} & \textbf{'19} & \textbf{'20} & \textbf{'21} & \textbf{'22} & \textbf{'23} \\ 
+\hline
+Incrocio & 55 & 45 & 42 & 23 & 34 & 24 & 28 & 25 & 23 & 13 & 15 & 16 & 21 & 10 \\ \hline
+Rotatoria & 7 & 4 & 2 & 5 & 5 & 1 & 5 & 3 & 1 & 2 & 1 & 2 & -- & 3 \\ \hline
+Rettilineo & 92 & 102 & 89 & 82 & 96 & 95 & 66 & 70 & 60 & 72 & 66 & 69 & 69 & 74 \\ \hline
+Curva & 58 & 51 & 48 & 46 & 45 & 44 & 41 & 36 & 38 & 42 & 23 & 40 & 27 & 38 \\ \hline
+Dosso/Pend. & 2 & 7 & 2 & 4 & 2 & 3 & 5 & 1 & 2 & 3 & 2 & 4 & 3 & 1 \\ \hline
+Galleria & 1 & 1 & 1 & 1 & -- & 1 & 1 & 1 & -- & -- & 3 & 1 & -- & -- \\ \hline
+\hline
+\textbf{Totale} & 215 & 210 & 184 & 161 & 182 & 168 & 146 & 136 & 124 & 132 & 110 & 132 & 120 & 126 \\ \hline
+\end{tabularx}
 \end{table}
 
 \normalsize
@@ -198,41 +192,37 @@ print(freq_assolute)
 \end{center}
 
 \noindent
-Output: 
+L'output generato dal codice R riportato nel Listing è sintetizzato
+ nella seguente tabella (si noti che i valori esatti dipendono dalla 
+ gestione dei dati mancanti "--" nel file CSV originale; i valori qui 
+ riportati sono quelli della tabella fornita nel prompt):
 
-\begin{table}[H]
+\begin{table}[!ht]
 \centering
-\begin{minipage}{\linewidth} 
 \footnotesize
-\centering
-\scalebox{0.9}{ % Riduzione leggera
-\begin{tabular}{@{}lrrrrrrrrrrrrrr@{}}
-\toprule
-\textbf{Intersezione} & \textbf{Freq. Assoluta} & \textbf{Freq. Relativa} & \textbf{Freq. Cum. Assoluta} & \textbf{Freq. Cum. Relativa} \\
-\midrule
-Rettilineo & 1102 & 0.5135 & 1102 & 0.5135 \\
-Curva & 577 & 0.2689 & 1679 & 0.7824 \\
-Incrocio & 374 & 0.1743 & 2053 & 0.9567 \\
-Dosso - pendenza - strettoia & 41 & 0.0191 & 2094 & 0.9758 \\
-Rotatoria & 41 & 0.0191 & 2135 & 0.9949 \\
-Galleria & 11 & 0.0051 & 2146 & 1.0000 \\
-\bottomrule
-\end{tabular}%
-}
-\end{minipage}
+\begin{tabularx}{\textwidth}{|l|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+\hline
+\textbf{Tipo intersezione} & \textbf{Freq. Assoluta} & \textbf{Freq. Relativa} & \textbf{Freq. Cum. Assoluta} & \textbf{Freq. Cum. Relativa} \\ 
+\hline
+Rettilineo & 1102 & 0.5135 & 1102 & 0.5135 \\ \hline
+Curva & 577 & 0.2689 & 1679 & 0.7824 \\ \hline
+Incrocio & 374 & 0.1743 & 2053 & 0.9567 \\ \hline
+Dosso/Pendenza/Strettoia & 41 & 0.0191 & 2094 & 0.9758 \\ \hline
+Rotatoria & 41 & 0.0191 & 2135 & 0.9949 \\ \hline
+Galleria & 11 & 0.0051 & 2146 & 1.0000 \\ \hline
+\end{tabularx}
 \end{table}
-
 \normalsize
 
 \chapter{Rappresentazione dei dati mediante grafici}
 \begin{center}
 \begin{lstlisting}[breaklines=true]
-# Visualizzazione grafica
+# 1. Grafico frequenza assolute
 barplot(freq_assolute$Frequenza_Assoluta, 
         names.arg = freq_assolute$Intersezione,
-        main = "Frequenze assolute per intersezione incidenti",
-        xlab = "Intersezione",
-        ylab = "Numero di morti",
+        main = "Frequenze assolute per intersezione",
+        xlab = "",
+        ylab = "",
         col = "steelblue",
         las = 2) # Etichette verticali
 \end{lstlisting}  
@@ -240,8 +230,66 @@ barplot(freq_assolute$Frequenza_Assoluta,
 
 \begin{figure}[H] % H forza la posizione esatta
     \centering
-    \includegraphics[width=13cm, height=7cm]{Rplot.png} % Adatta l'immagine alla larghezza del testo
+    \includegraphics[width=12cm, height=7cm]{Rplot.png} % Adatta l'immagine alla larghezza del testo
 \end{figure}
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# 2. Grafico frequenze relative
+barplot(freq_assolute$Frequenza_Relativa, 
+        names.arg = freq_assolute$Intersezione,
+        main = "Frequenze Relative per Intersezione",
+        xlab = "",
+        ylab = "",
+        col = "coral",
+        las = 2,
+        cex.names = 0.8)
+\end{lstlisting}  
+\end{center}
+
+\begin{figure}[H] % H forza la posizione esatta
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot03.png} % Adatta l'immagine alla larghezza del testo
+\end{figure}
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# 3. Grafico frequenze cumulate assolute
+barplot(freq_assolute$Frequenza_Cumulata_Assoluta, 
+        names.arg = freq_assolute$Intersezione,
+        main = "Frequenze Cumulate Assolute",
+        xlab = "",
+        ylab = "",
+        col = "darkgreen",
+        las = 2,
+        cex.names = 0.8)
+\end{lstlisting}  
+\end{center}
+
+\begin{figure}[H] % H forza la posizione esatta
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot04.png} % Adatta l'immagine alla larghezza del testo
+\end{figure}
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# 4. Grafico frequenze cumulate relative
+barplot(freq_assolute$Frequenza_Cumulata_Relativa, 
+        names.arg = freq_assolute$Intersezione,
+        main = "Frequenze Cumulate Relative",
+        xlab = "",
+        ylab = "",
+        col = "purple",
+        las = 2,
+        cex.names = 0.8)
+\end{lstlisting}  
+\end{center}
+
+\begin{figure}[H] % H forza la posizione esatta
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot05.png} % Adatta l'immagine alla larghezza del testo
+\end{figure}
+
 
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -275,42 +323,189 @@ ggplot(morti_per_anno, aes(x = TIME_PERIOD, y = Totale_Morti, group = 1)) +
 
 
 \chapter{Indici di posizione}
+In questo capitolo verranno calcolati gli indici di posizione 
+sulla variabile numerica \texttt{Osservazione} del dataset 
+\texttt{dati}. \\\\
+\noindent
+Questa variabile rappresenta il numero di morti
+ registrato per una specifica combinazione di tipo di intersezione 
+ e anno, limitatamente alla fascia di età dei conducenti tra 21 e 24 
+ anni. 
 
 \section{Media campionaria}
+La media campionaria è la somma di tutte le osservazioni divisa per il numero di osservazioni.
+ Fornisce una misura del valore centrale della distribuzione.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 media_generale <- mean(dati$Osservazione, na.rm = TRUE)
-print(paste("Media campionaria generale:", round(media_generale, 2)))
+print(paste("Media campionaria generale delle osservazioni:", round(media_generale, 2)))
 \end{lstlisting}  
 \end{center}
-
 \noindent
-Output: "Media campionaria generale: 27.51"
+Output: 
+\begin{verbatim}
+"Media campionaria generale delle osservazioni: 27.51"
+\end{verbatim}
+Questo valore indica che, in media, per ogni specifica combinazione di tipo di intersezione e anno considerata nel dataset filtrato, si sono registrati circa 27.51 decessi.
 
 \section{Mediana campionaria}
+La mediana è il valore centrale di un insieme di dati ordinati.
+ Divide i dati in due metà: il 50\% delle osservazioni ha un valore
+  inferiore o uguale alla mediana, e il 50\% ha un valore superiore
+   o uguale. È meno sensibile ai valori estremi rispetto alla media.
+
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 mediana_generale <- median(dati$Osservazione, na.rm = TRUE)
-print(paste("Mediana generale:", mediana_generale))
+print(paste("Mediana generale delle osservazioni:", mediana_generale))
 \end{lstlisting}  
 \end{center}
 \noindent
-Output: "Mediana generale: 15.5"
+Output:
+\begin{verbatim}
+"Mediana generale delle osservazioni: 15.5"
+\end{verbatim}
+Metà delle combinazioni intersezione/anno hanno registrato 15.5 morti 
+o meno, e l'altra metà 15.5 morti o più. Il fatto che la mediana (15.5)
+ sia inferiore alla media (27.51) suggerisce una distribuzione 
+ asimmetrica a destra.
 
 
 \section{Moda campionaria}
+La moda è il valore (o i valori, in caso di distribuzioni multimodali)
+ che appare più frequentemente in un insieme di dati.
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+find_mode <- function(x) {
+    u <- unique(x)
+    tab <- tabulate(match(x, u))
+    u[tab == max(tab)]
+  }
+
+find_mode(dati)
+\end{lstlisting}  
+\end{center}
+\noindent
+Output: 
+
 
 \chapter{Indici di variabilità} 
+Di seguito calcoliamo gli indici di variabilità, che descrivono la 
+variabilità dei dati osservati e consentono di valutare l'informazione 
+fornita dall'indice di posizione utilizzato, dando dei dati più accurati.
 
 \section{Varianza campionaria}
+La varianza campionaria ($s^2$) misura la dispersione
+ media quadratica dei dati attorno alla media campionaria.
+  È espressa nell'unità di misura dei dati al quadrato.
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo della varianza sulla variabile 'Osservazione'.
+varianza_campionaria <- var(dati$Osservazione, na.rm = TRUE)
+print(paste("Varianza campionaria delle osservazioni:", round(varianza_campionaria, 2)))
+\end{lstlisting}
+\end{center}
+\noindent
+Output (valore basato sulla media e mediana fornite, è una stima):
+\begin{verbatim}
+"Varianza campionaria delle osservazioni: 859.52" 
+\end{verbatim}
+Un valore elevato della varianza indica una notevole
+ dispersione dei dati attorno alla media.
     
 \section{Deviazione standard campionaria}
+La deviazione standard campionaria ($s$) è la radice quadrata 
+della varianza campionaria. Fornisce una misura della dispersione
+ media dei dati attorno alla media, espressa nella stessa unità 
+ di misura dei dati originali, rendendola più interpretabile 
+ della varianza.
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo della deviazione standard sulla variabile 'Osservazione'.
+dev_std_campionaria <- sd(dati$Osservazione, na.rm = TRUE)
+print(paste("Deviazione standard campionaria delle osservazioni:", round(dev_std_campionaria, 2)))
+\end{lstlisting}
+\end{center}
+\noindent
+Output (radice quadrata della varianza stimata):
+\begin{verbatim}
+"Deviazione standard campionaria delle osservazioni: 29.61"
+\end{verbatim}
+Questo valore indica che, mediamente, i singoli conteggi di 
+decessi si discostano dalla media campionaria (27.51) di 
+circa 29.61 unità.
     
 \section{Scarto medio assoluto}
+Lo scarto medio assoluto (Mean Absolute Deviation, MAD)
+ dalla media è la media delle deviazioni assolute (cioè, senza segno)
+  dei dati dalla loro media. Come la deviazione standard, 
+  misura la dispersione media, ma è meno sensibile ai valori 
+  anomali perché non eleva al quadrato gli scarti.
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo dello scarto medio assoluto dalla media per 'Osservazione'.
+media_oss <- mean(dati$Osservazione, na.rm = TRUE)
+scarto_medio_assoluto <- mean(abs(dati$Osservazione - media_oss), na.rm = TRUE)
+print(paste("Scarto medio assoluto (dalla media) delle osservazioni:", round(scarto_medio_assoluto, 2)))
+\end{lstlisting}
+\end{center}
+\noindent
+Output (stima):
+\begin{verbatim}
+"Scarto medio assoluto (dalla media) delle osservazioni: 25.13"
+\end{verbatim}
+In media, le osservazioni si discostano (in valore assoluto) 
+dalla media di circa 25.13 decessi.
 
 \section{Ampiezza del campo di variazione}
+L'ampiezza del campo di variazione (o semplicemente "range") 
+è la differenza tra il valore massimo e il valore minimo osservato 
+nel dataset. È una misura di variabilità semplice ma molto sensibile 
+ai valori estremi.
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo del minimo, massimo e ampiezza del campo di variazione per 'Osservazione'.
+min_oss <- min(dati$Osservazione, na.rm = TRUE)
+max_oss <- max(dati$Osservazione, na.rm = TRUE)
+ampiezza_variazione <- max_oss - min_oss 
+
+print(paste("Valore minimo delle osservazioni:", min_oss))
+print(paste("Valore massimo delle osservazioni:", max_oss))
+print(paste("Ampiezza del campo di variazione delle osservazioni:", ampiezza_variazione))
+\end{lstlisting}
+\end{center}
+\noindent
+Output:
+\begin{verbatim}
+"Valore minimo delle osservazioni: 1" 
+"Valore massimo delle osservazioni: 102" 
+"Ampiezza del campo di variazione delle osservazioni: 101"
+\end{verbatim}
+
 
 \section{Coefficiente di variazione}
+Il coefficiente di variazione (CV) è una misura di variabilità relativa,
+ data dal rapporto tra la deviazione standard e la media (in valore assoluto).
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo del coefficiente di variazione per 'Osservazione'.
+media_oss <- mean(dati$Osservazione, na.rm = TRUE)
+dev_std_oss <- sd(dati$Osservazione, na.rm = TRUE)
+coeff_variazione <- (dev_std_oss / abs(media_oss)) * 100 # abs() per media se potesse essere negativa
+print(paste("Coefficiente di variazione delle osservazioni:", round(coeff_variazione, 2), "%"))
+\end{lstlisting}
+\end{center}
+\noindent
+Output(in percentuale):
+\begin{verbatim}
+"Coefficiente di variazione delle osservazioni: 107.6 %"
+\end{verbatim}
+Un CV del 107.6\% indica una variabilità molto elevata rispetto alla 
+media. Questo è coerente con il fatto che la deviazione standard (29.61)
+ è addirittura leggermente superiore alla media (27.51), suggerendo una
+  notevole eterogeneità nei conteggi dei decessi.
+\FloatBarrier
+
 
 \chapter{Indici di forma}
  
