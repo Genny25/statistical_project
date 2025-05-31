@@ -192,10 +192,8 @@ print(freq_assolute)
 \end{center}
 
 \noindent
-L'output generato dal codice R riportato nel Listing è sintetizzato
- nella seguente tabella (si noti che i valori esatti dipendono dalla 
- gestione dei dati mancanti "--" nel file CSV originale; i valori qui 
- riportati sono quelli della tabella fornita nel prompt):
+L'output generato dal codice R riportato è sintetizzato
+ nella seguente tabella:
 
 \begin{table}[!ht]
 \centering
@@ -320,6 +318,28 @@ ggplot(morti_per_anno, aes(x = TIME_PERIOD, y = Totale_Morti, group = 1)) +
     \includegraphics[width=12cm, height=7cm]{Rplot01.png} % Adatta l'immagine alla larghezza del testo
 \end{figure}
 
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Crea il grafico a torta
+ggplot(freq_assolute, aes(x = "", y = Frequenza_Assoluta, fill = Intersezione)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start = 0) +
+  labs(title = "",
+       fill = "Tipo di intersezione") +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+        legend.position = "right") +
+  geom_text(aes(label = paste0(round(Frequenza_Assoluta/sum(Frequenza_Assoluta)*100, 1), "%")), 
+            position = position_stack(vjust = 0.5),
+            size = 3)
+\end{lstlisting}  
+\end{center}
+
+\begin{figure}[H] % H forza la posizione esatta
+    \centering
+    \includegraphics[width=13cm, height=8cm]{Rplot08.png} % Adatta l'immagine alla larghezza del testo
+\end{figure}
+
 
 
 \chapter{Indici di posizione}
@@ -330,7 +350,16 @@ sulla variabile numerica \texttt{Osservazione} del dataset
 Questa variabile rappresenta il numero di morti
  registrato per una specifica combinazione di tipo di intersezione 
  e anno, limitatamente alla fascia di età dei conducenti tra 21 e 24 
- anni. 
+ anni. \\\\
+ \noindent
+ Gli indici di posizione(o di tendenza generale) sono misure che consentono di 
+ sintetizzare i dati osservati con un solo valore numerico che sia rappresentativo dei dati stessi.
+ Gli indici di posizone più adoperati sono tre
+\begin{itemize}
+  \item media
+  \item mediana
+  \item moda
+\end{itemize}
 
 \section{Media campionaria}
 La media campionaria è la somma di tutte le osservazioni divisa per il numero di osservazioni.
@@ -349,11 +378,8 @@ Output:
 Questo valore indica che, in media, per ogni specifica combinazione di tipo di intersezione e anno considerata nel dataset filtrato, si sono registrati circa 27.51 decessi.
 
 \section{Mediana campionaria}
-La mediana è il valore centrale di un insieme di dati ordinati.
- Divide i dati in due metà: il 50\% delle osservazioni ha un valore
-  inferiore o uguale alla mediana, e il 50\% ha un valore superiore
-   o uguale. È meno sensibile ai valori estremi rispetto alla media.
-
+La mediana è un numero che precede tanti dati quanti ne segue, ossia il 
+valore centrale dei dati riordinati in senso crescente.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 mediana_generale <- median(dati$Osservazione, na.rm = TRUE)
@@ -365,8 +391,7 @@ Output:
 \begin{verbatim}
 "Mediana generale delle osservazioni: 15.5"
 \end{verbatim}
-Metà delle combinazioni intersezione/anno hanno registrato 15.5 morti 
-o meno, e l'altra metà 15.5 morti o più. Il fatto che la mediana (15.5)
+ Il fatto che la mediana (15.5)
  sia inferiore alla media (27.51) suggerisce una distribuzione 
  asimmetrica a destra.
 
@@ -387,10 +412,43 @@ find_mode(dati)
 \end{center}
 \noindent
 Output: 
+\begin{table}[!ht]
+\centering
+\footnotesize
+%\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+\textbf{Tipo} & \multicolumn{6}{c|}{\textbf{Anno}} \\ \cline{2-7}
+\textbf{Intersezione} & 2010 & 2011 & 2012 & 2013 & 2014 & 2015 \\ \hline
+Incrocio & 55 & 45 & 42 & 23 & 34 & 24 \\ \hline
+Rotatoria & 7 & 4 & 2 & 5 & 5 & 1 \\ \hline
+Rettilineo & 92 & 102 & 89 & 82 & 96 & 95 \\ \hline
+Curva & 58 & 51 & 48 & 46 & 45 & 44 \\ \hline
+Dosso/Pend./Str. & 2 & 7 & 2 & 4 & 2 & 3 \\ \hline
+Galleria & 1 & 1 & 1 & 1 & - & 1 \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+\textbf{Tipo} & \multicolumn{7}{c|}{\textbf{Anno}} \\ \cline{2-8}
+\textbf{Intersezione} & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022-23 \\ \hline
+Incrocio & 28 & 25 & 23 & 13 & 15 & 16 & 31 \\ \hline
+Rotatoria & 5 & 3 & 1 & 2 & 1 & 2 & 3 \\ \hline
+Rettilineo & 66 & 70 & 60 & 72 & 66 & 69 & 143 \\ \hline
+Curva & 41 & 36 & 38 & 42 & 23 & 40 & 65 \\ \hline
+Dosso/Pend./Str. & 5 & 1 & 2 & 3 & 2 & 4 & 4 \\ \hline
+Galleria & 1 & 1 & - & - & 3 & 1 & - \\ \hline
+\end{tabular}
+%\end{minipage}
+\end{table}
+\normalsize
 
 
 \chapter{Indici di variabilità} 
-Di seguito calcoliamo gli indici di variabilità, che descrivono la 
+Di seguito calcoliamo gli indici di variabilità(o di dispersione), che descrivono la 
 variabilità dei dati osservati e consentono di valutare l'informazione 
 fornita dall'indice di posizione utilizzato, dando dei dati più accurati.
 
@@ -508,11 +566,133 @@ media. Questo è coerente con il fatto che la deviazione standard (29.61)
 
 
 \chapter{Indici di forma}
- 
+Gli indici di forma misurano caratteristiche relative alla forma della distribuzione
+dati. I più usati sono l'indice di asimmetria e l'indice di curtosi.
+
 \section{Indice di asimmetria}
+L'indice di asimmetria (skewness) misura il grado di simmetria di
+ una distribuzione di dati attorno alla sua media.
+\begin{itemize}
+    \item Un valore di \textbf{skewness $>$ 0} indica un'asimmetria positiva (coda a destra): la distribuzione ha una coda che si estende maggiormente verso i valori più alti. La media è tipicamente maggiore della mediana.
+    \item Un valore di \textbf{skewness $<$ 0} indica un'asimmetria negativa (coda a sinistra): la distribuzione ha una coda che si estende maggiormente verso i valori più bassi. La media è tipicamente minore della mediana.
+    \item Un valore di \textbf{skewness $\approx$ 0} indica una distribuzione approssimativamente simmetrica (come la distribuzione normale).
+\end{itemize}
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo dell'indice di asimmetria per 'Osservazione'.
+indice_asimmetria <- skewness(dati$Osservazione, na.rm = TRUE)
+print(paste("Indice di asimmetria (Skewness) delle osservazioni:", round(indice_asimmetria, 2)))
+\end{lstlisting}
+\end{center}
+\noindent
+Output:
+\begin{verbatim}
+"Indice di asimmetria (Skewness) delle osservazioni: 0.9"
+\end{verbatim}
+Un valore di 0.9 indica una moderata asimmetria positiva
+ (coda a destra). Questo è coerente con l'osservazione precedente
+  che la media (27.51) è maggiore della mediana (15.5), suggerendo 
+  che ci sono alcune osservazioni con un numero di decessi relativamente
+   alto che "stirano" la coda destra della distribuzione.\\
+
+\noindent
+Per visualizzare graficamente questa asimmetria, 
+possiamo generare un istogramma con una curva di densità 
+sovrapposta e linee verticali per la media e la mediana.
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Creazione del grafico
+skewness_plot <- ggplot(dati, aes(x = Osservazione)) +
+  geom_histogram(aes(y = ..density..), binwidth = 5, fill = "lightblue", color = "black", alpha = 0.7) +
+  geom_density(color = "darkblue", linewidth = 1) +
+  geom_vline(aes(xintercept = media_oss, color = "Media"), linetype = "dashed", linewidth = 1) +
+  geom_vline(aes(xintercept = mediana_generale, color = "Mediana"), linetype = "dotted", linewidth = 1) +
+  labs(title = "Distribuzione del Numero di Osservazioni (Decessi)",
+       subtitle = paste0("Skewness: ", round(indice_asimmetria, 2), 
+                         " | Media: ", round(media_oss, 2), 
+                         " | Mediana: ", round(mediana_generale, 2)),
+       x = "Numero di Osservazioni (Decessi)",
+       y = "Densita") +
+  scale_color_manual(name = "Statistiche", values = c("Media" = "red", "Mediana" = "green")) +
+  theme_minimal()
+
+print(skewness_plot)
+\end{lstlisting}
+\end{center}
+
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot06.png} 
+\end{figure}
 
 \section{Indice di curtosi} 
+L'indice di curtosi misura l'appiattimento di
+ una distribuzione, in particolare la concentrazione dei dati attorno
+  al valore centrale e la "pesantezza" delle code, rispetto a una 
+  distribuzione normale.
+\begin{itemize}
+    \item \textbf{Eccesso di curtosi $>$ 0} (Curtosi $>$ 3): Distribuzione leptocurtica. È più appuntita al centro e ha code più pesanti (maggior probabilità di valori estremi) rispetto a una normale.
+    \item \textbf{Eccesso di curtosi $<$ 0} (Curtosi $<$ 3): Distribuzione platicurtica. È più piatta al centro e ha code più leggere rispetto a una normale.
+    \item \textbf{Eccesso di curtosi $\approx$ 0} (Curtosi $\approx$ 3): Distribuzione normocurtica. Ha una forma simile a quella di una distribuzione normale in termini di appiattimento.
+\end{itemize}
 
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo dell'indice di curtosi (eccesso di curtosi) per 'Osservazione'.
+indice_curtosi <- kurtosis(dati$Osservazione, na.rm = TRUE)
+print(paste("Indice di curtosi (eccesso di curtosi) delle osservazioni:", round(indice_curtosi, 2)))
+# La curtosi "classica" sarebbe approssimativamente: round(indice_curtosi, 2) + 3
+\end{lstlisting}
+\end{center}
+\noindent
+Output:
+\begin{verbatim}
+"Indice di curtosi (eccesso di curtosi) delle osservazioni: 2.64" 
+\end{verbatim}
+Un eccesso di curtosi di circa 2.64 (corrispondente a una curtosi
+ "classica" di circa 2.64 + 3 = 5.64) indica una distribuzione 
+ marcatamente leptocurtica.\\\\
+ \noindent
+  Questo significa che la distribuzione 
+ del numero di decessi per combinazione intersezione/anno presenta
+  un picco più pronunciato attorno alla moda/mediana e code più 
+  "pesanti" rispetto a una distribuzione normale. \\\\
+  \noindent
+  Ciò implica una 
+  maggiore frequenza di valori vicini al centro, ma anche una
+   maggiore probabilità di osservare valori estremi (molto alti,
+    data l'asimmetria positiva) rispetto a quanto ci si aspetterebbe 
+    da una distribuzione normale.\\
+
+\noindent
+Graficamente si ha
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Creazione del grafico per la curtosi
+kurtosis_plot <- ggplot(dati, aes(x = Osservazione)) +
+  geom_histogram(aes(y = ..density..), binwidth = 5, fill = "lightcoral", color = "black", alpha = 0.7) +
+  geom_density(color = "darkred", linewidth = 1) +
+  geom_vline(aes(xintercept = media_oss, color = "Media"), linetype = "dashed", linewidth = 1) +
+  labs(title = "Distribuzione del Numero di Osservazioni (Decessi)",
+       subtitle = paste0("Eccesso di Curtosi: ", round(indice_curtosi, 2),
+                         " | Media: ", round(media_oss, 2)),
+       x = "Numero di Osservazioni (Decessi)",
+       y = "Densita") +
+  scale_color_manual(name = "Statistiche", values = c("Media" = "blue")) +
+  theme_minimal()
+
+print(kurtosis_plot)
+
+\end{lstlisting}
+\end{center}
+
+
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot07.png} 
+\end{figure}
 
 
 \end{document}
