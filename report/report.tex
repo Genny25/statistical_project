@@ -123,12 +123,12 @@ Uno dei punti di forza di R è la facilità con cui possono essere prodotti graf
 compresi simboli matematici e formule se necessario.\\\\
 \noindent
 Per semplificare l'analisi, si è scelto di lavorare non sull'intero dataset, 
-ma su un sottoinsieme filtrato di dati, relativo alle morti per incidenti stradali che riguardano solo i conducenti di età compresa tra i 21 e i 24 anni.\\\\
+ma su un sottoinsieme filtrato di dati, relativo alle \textbf{morti per incidenti stradali che riguardano solo i conducenti di età compresa tra i 21 e i 24 anni.}\\\\
 \noindent
 Per approfondire l'analisi con dati dettagliati e specifici, è possibile consultare il dataset direttamente sul sito dell'ISTAT al seguente link:
 \url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0810HEA,1.0/HEA_ROAD/IT1,41_270_DF_DCIS_MORTIFERITISTR1_1,1.0}\\\\
 \noindent
-Il dataset in formato CSV(Comma-Separated Values) è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\\\
+Il dataset in formato \textbf{CSV(Comma-Separated Values)} è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\\\
 Il formato scelto (CSV) permette un'agevole manipolazione dei dati, essendo compatibile con la maggior parte dei software statistici e
 dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.\\
 
@@ -345,7 +345,7 @@ ggplot(freq_assolute, aes(x = "", y = Frequenza_Assoluta, fill = Intersezione)) 
 
 
 \chapter{Indici di posizione}
-In questo capitolo verranno calcolati gli indici di posizione 
+In questo capitolo verranno calcolati gli \textbf{indici di posizione} 
 sulla variabile numerica \texttt{Osservazione} del dataset 
 \texttt{dati}. \\\\
 \noindent
@@ -364,7 +364,7 @@ Questa variabile rappresenta il numero di morti
 \end{itemize}
 
 \section{Media campionaria}
-La media campionaria è la somma di tutte le osservazioni divisa per il numero di osservazioni.
+La \textbf{media campionaria} è la somma di tutte le osservazioni divisa per il numero di osservazioni.
  Fornisce una misura del valore centrale della distribuzione.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -380,7 +380,7 @@ Output:
 Questo valore indica che, in media, per ogni specifica combinazione di tipo di intersezione e anno considerata nel dataset filtrato, si sono registrati circa 27.51 decessi.
 
 \section{Mediana campionaria}
-La mediana è un numero che precede tanti dati quanti ne segue, ossia il 
+La \textbf{mediana} è un numero che precede tanti dati quanti ne segue, ossia il 
 valore centrale dei dati riordinati in senso crescente.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -397,9 +397,8 @@ Output:
  sia inferiore alla media (27.51) suggerisce una distribuzione 
  asimmetrica a destra.
 
-
 \section{Moda campionaria}
-La moda è il valore (o i valori, in caso di distribuzioni multimodali)
+La \textbf{moda} è il valore (o i valori, in caso di distribuzioni multimodali)
  che appare più frequentemente in un insieme di dati.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -450,14 +449,14 @@ Galleria & 1 & 1 & - & - & 3 & 1 & - \\ \hline
 
 
 \chapter{Indici di variabilità} 
-Di seguito calcoliamo gli indici di variabilità(o di dispersione), che descrivono la 
+Di seguito calcoliamo gli \textbf{indici di variabilità(o di dispersione)}, che descrivono la 
 variabilità dei dati osservati e consentono di valutare l'informazione 
 fornita dall'indice di posizione utilizzato, dando dei dati più accurati.
 
 \section{Varianza campionaria}
-La varianza campionaria ($s^2$) misura la dispersione
- media quadratica dei dati attorno alla media campionaria.
-  È espressa nell'unità di misura dei dati al quadrato.
+La \textbf{varianza campionaria ($s^2$)} misura la dispersione
+media quadratica dei dati attorno alla media campionaria.
+È espressa nell'unità di misura dei dati al quadrato.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 # Calcolo della varianza sulla variabile 'Osservazione'.
@@ -474,7 +473,7 @@ Un valore elevato della varianza indica una notevole
  dispersione dei dati attorno alla media.
     
 \section{Deviazione standard campionaria}
-La deviazione standard campionaria ($s$) è la radice quadrata 
+La \textbf{deviazione standard campionaria ($s$)} è la radice quadrata 
 della varianza campionaria. Fornisce una misura della dispersione
  media dei dati attorno alla media, espressa nella stessa unità 
  di misura dei dati originali, rendendola più interpretabile 
@@ -496,7 +495,7 @@ decessi si discostano dalla media campionaria (27.51) di
 circa 29.61 unità.
     
 \section{Scarto medio assoluto}
-Lo scarto medio assoluto (Mean Absolute Deviation, MAD)
+Lo \textbf{scarto medio assoluto (Mean Absolute Deviation, MAD)}
  dalla media è la media delle deviazioni assolute (cioè, senza segno)
   dei dati dalla loro media. Come la deviazione standard, 
   misura la dispersione media, ma è meno sensibile ai valori 
@@ -518,10 +517,11 @@ In media, le osservazioni si discostano (in valore assoluto)
 dalla media di circa 25.13 decessi.
 
 \section{Ampiezza del campo di variazione}
-L'ampiezza del campo di variazione (o semplicemente "range") 
+L'\textbf{ampiezza del campo di variazione (o semplicemente "range")} 
 è la differenza tra il valore massimo e il valore minimo osservato 
 nel dataset. È una misura di variabilità semplice ma molto sensibile 
 ai valori estremi.
+\newpage
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 # Calcolo del minimo, massimo e ampiezza del campo di variazione per 'Osservazione'.
@@ -544,7 +544,7 @@ Output:
 
 
 \section{Coefficiente di variazione}
-Il coefficiente di variazione (CV) è una misura di variabilità relativa,
+Il \textbf{coefficiente di variazione (CV)} è una misura di variabilità relativa,
  data dal rapporto tra la deviazione standard e la media (in valore assoluto).
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -568,11 +568,11 @@ media. Questo è coerente con il fatto che la deviazione standard (29.61)
 
 
 \chapter{Indici di forma}
-Gli indici di forma misurano caratteristiche relative alla forma della distribuzione
+Gli \textbf{indici di forma} misurano caratteristiche relative alla forma della distribuzione
 dati. I più usati sono l'indice di asimmetria e l'indice di curtosi.
 
 \section{Indice di asimmetria}
-L'indice di asimmetria (skewness) misura il grado di simmetria di
+L'\textbf{indice di asimmetria (skewness)} misura il grado di simmetria di
  una distribuzione di dati attorno alla sua media.
 \begin{itemize}
     \item Un valore di \textbf{skewness $>$ 0} indica un'asimmetria positiva (coda a destra): la distribuzione ha una coda che si estende maggiormente verso i valori più alti. La media è tipicamente maggiore della mediana.
@@ -593,10 +593,10 @@ Output:
 "Indice di asimmetria (Skewness) delle osservazioni: 0.9"
 \end{verbatim}
 Un valore di 0.9 indica una moderata asimmetria positiva
- (coda a destra). Questo è coerente con l'osservazione precedente
-  che la media (27.51) è maggiore della mediana (15.5), suggerendo 
-  che ci sono alcune osservazioni con un numero di decessi relativamente
-   alto che "stirano" la coda destra della distribuzione.\\
+(coda a destra). Questo è coerente con l'osservazione precedente
+che la media (27.51) è maggiore della mediana (15.5), suggerendo 
+che ci sono alcune osservazioni con un numero di decessi relativamente
+alto che "stirano" la coda destra della distribuzione.\\
 
 \noindent
 Per visualizzare graficamente questa asimmetria, 
@@ -630,7 +630,7 @@ print(skewness_plot)
 \end{figure}
 
 \section{Indice di curtosi} 
-L'indice di curtosi misura l'appiattimento di
+L'\textbf{indice di curtosi} misura l'appiattimento di
  una distribuzione, in particolare la concentrazione dei dati attorno
   al valore centrale e la "pesantezza" delle code, rispetto a una 
   distribuzione normale.
@@ -655,7 +655,7 @@ Output:
 \end{verbatim}
 Un eccesso di curtosi di circa 2.64 (corrispondente a una curtosi
  "classica" di circa 2.64 + 3 = 5.64) indica una distribuzione 
- marcatamente leptocurtica.\\\\
+ marcatamente \textbf{leptocurtica.}\\\\
  \noindent
   Questo significa che la distribuzione 
  del numero di decessi per combinazione intersezione/anno presenta
@@ -667,7 +667,7 @@ Un eccesso di curtosi di circa 2.64 (corrispondente a una curtosi
    maggiore probabilità di osservare valori estremi (molto alti,
     data l'asimmetria positiva) rispetto a quanto ci si aspetterebbe 
     da una distribuzione normale.\\
-
+\newpage
 \noindent
 Graficamente si ha
 \begin{center}
@@ -695,14 +695,14 @@ print(kurtosis_plot)
 \end{figure}
 
 \chapter{Percentili campionari}
-Un percentile k-esimo di un campione di dati è un valore che 
+Un \textbf{percentile} k-esimo di un campione di dati è un valore che 
 è maggiore di una percentuale k dei dati e minore della 
 restante percentuale. \\\\
 \noindent
-Il 25-esimo percentile si dice primo quartile, il 50-esimo percentile
+Il 25-esimo percentile si dice primo \textbf{quartile}, il 50-esimo percentile
 si dice mediana campionaria o secondo quartile, il 75-esimo percentile
 si dice terzo quartile e si denotano con \[Q_{1}, Q_{2}, Q_{3} \].\\
-La differenza tra il terzo e il primo quartile è chiamata scarto interquartile.
+La differenza tra il terzo e il primo quartile è chiamata \textbf{scarto interquartile.}
 
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -743,7 +743,7 @@ indica che il 50\% centrale dei dati si distribuisce in un intervallo di ampiezz
 
 \section{Box Plot}
 Uno strumento grafico utile per la visualizzare alcuni degli indici 
-rappresentativi dei dati è il box plot.\\\\
+rappresentativi dei dati è il \textbf{box plot.}\\\\
 \noindent
 Si ottiene sovrapponendo ad una linea orizzontale che va dal minore al maggiore dei dati,
 un rettangolo che va dal primo al terzo quartile, con una linea verticale che lo divide
@@ -758,7 +758,7 @@ boxplot_oss_intersezione <- ggplot(dati, aes(x = Intersezione, y = Osservazione,
 geom_boxplot(outlier.colour = "red", na.rm = TRUE) +
 labs(title = "Box Plot di Osservazione per Tipo di Intersezione",
 x = "Tipo di Intersezione",
-y = "Numero di Osservazioni (Decessi)") +
+y = "Numero di Osservazioni") +
 theme_minimal() +
 theme(axis.text.x = element_text(angle = 45, hjust = 1), # Ruota etichette asse x
 legend.position = "none") # Rimuove la legenda se i colori sono distintivi
@@ -774,33 +774,90 @@ print(boxplot_oss_intersezione)
 \end{figure}
 \noindent
 Il grafico permette di confrontare la distribuzione  del numero di decessi per ciascun 
-tipo di intersezione. \\ Si possono notare differenze nelle mediane, nella variabilità e 
+tipo di intersezione. Si possono notare differenze nelle mediane, nella variabilità e 
  nella presenza di 
  \footnote{Si dice outlier un dato anomalo, ossia molto distante dagli altri dati. Vengono solitamente rappresentati come punti individuali.}outlier 
  tra le categorie. Ad esempio, i rettilinei potrebbero 
  mostrare una mediana più alta e una maggiore dispersione.
 
+\newpage
+
 \section{Disuguaglianza di Chebyshev}
-La disuguaglianza di Chebyshev fornisce una stima della proporzione di dati 
-che si trovano entro un certo numero di deviazioni standard dalla media campionaria,
-indipendentemente dalla forma della distribuzione.
+La \textbf{disuguaglianza di Chebyshev} fornisce un limite inferiore alla proporzione di dati 
+che si trovano entro un certo numero ($k$) di deviazioni standard dalla media campionaria ($s$),
+indipendentemente dalla forma della distribuzione. La disuguaglianza afferma che 
+almeno $1 - 1/k^2$ dei valori si trova nell'intervallo $[\bar{x} - ks, \bar{x} + ks]$, per $k > 1$.
 
 \begin{center}
 \begin{lstlisting}[breaklines=true]
-#
+# Disuguaglianza di Chebyshev
+# media_generale e dev_std_campionaria sono stati calcolati precedentemente
+# media_generale = 27.51, dev_std_campionaria = 29.61
+# N_validi = sum(!is.na(dati$Osservazione)) # Numero di osservazioni non NA (79)
+N_validi <- sum(!is.na(dati$Osservazione))
+
+# Per k = 2 deviazioni standard
+k2 <- 2
+lim_inf_k2 <- media_generale - k2 * dev_std_campionaria
+lim_sup_k2 <- media_generale + k2 * dev_std_campionaria
+prop_teorica_k2 <- 1 - 1/k2^2
+prop_osservata_k2 <- sum(dati$Osservazione >= lim_inf_k2 & dati$Osservazione <= lim_sup_k2, na.rm = TRUE) / N_validi
+
+cat(paste0("Disuguaglianza di Chebyshev per k = ", k2, ":\n"))
+cat(paste0("  Intervallo (media +/- ", k2, " * dev_std): [", round(lim_inf_k2, 2), ", ", round(lim_sup_k2, 2), "]\n"))
+cat(paste0("  Proporzione minima teorica di dati nell'intervallo (almeno): ", round(prop_teorica_k2*100, 2), "%\n"))
+cat(paste0("  Proporzione osservata di dati nell'intervallo: ", round(prop_osservata_k2*100, 2), "%\n\n"))
+
+# Per k = 3 deviazioni standard
+k3 <- 3
+lim_inf_k3 <- media_generale - k3 * dev_std_campionaria
+lim_sup_k3 <- media_generale + k3 * dev_std_campionaria
+prop_teorica_k3 <- 1 - 1/k3^2
+prop_osservata_k3 <- sum(dati$Osservazione >= lim_inf_k3 & dati$Osservazione <= lim_sup_k3, na.rm = TRUE) / N_validi
+
+cat(paste0("Disuguaglianza di Chebyshev per k = ", k3, ":\n"))
+cat(paste0("  Intervallo (media +/- ", k3, " * dev_std): [", round(lim_inf_k3, 2), ", ", round(lim_sup_k3, 2), "]\n"))
+cat(paste0("  Proporzione minima teorica di dati nell'intervallo (almeno): ", round(prop_teorica_k3*100, 2), "%\n"))
+cat(paste0("  Proporzione osservata di dati nell'intervallo: ", round(prop_osservata_k3*100, 2), "%\n"))
 \end{lstlisting}
 \end{center}
 
 \noindent
 Output:
 \begin{verbatim}
+Disuguaglianza di Chebyshev per k = 2:
+  Intervallo (media +/- 2 * dev_std): [-31.7, 86.72]
+  Proporzione minima teorica di dati nell'intervallo (almeno): 75%
+  Proporzione osservata di dati nell'intervallo: 93.59%
 
+Disuguaglianza di Chebyshev per k = 3:
+  Intervallo (media +/- 3 * dev_std): [-61.3, 116.33]
+  Proporzione minima teorica di dati nell'intervallo (almeno): 88.89%
+  Proporzione osservata di dati nell'intervallo: 100.00%
 \end{verbatim}
+\noindent
+Per $k=2$, la disuguaglianza di Chebyshev garantisce che almeno 
+il 75\% dei dati si trovi nell'intervallo $[-31.7, 86.72]$. 
+Poiché il numero di osservazioni non può essere negativo, l'
+intervallo effettivo considerato per i dati è $[1, 86.72]$ 
+(essendo 1 il minimo osservato). La proporzione osservata di
+ dati in questo intervallo è del 93.59\%, che soddisfa ampiamente 
+ il limite teorico.\\\\
+Per $k=3$, almeno l'88.89\% dei dati dovrebbe trovarsi nell'
+intervallo $[-61.3, 116.33]$ (effettivamente $[1, 102]$ per 
+i nostri dati, dato che il massimo è 102). In questo caso, il
+ 100\% delle osservazioni valide ricade in questo intervallo, 
+ confermando la disuguaglianza.
 
-\section{Dati Bivariati}
-In questa sezione analizzeremo la relazione tra due variabili: il numero di morti e l'anno.
 
-\subsection{Diagramma a dispersione}
+\chapter{Dati Bivariati}
+In questa sezione analizzeremo la relazione tra due variabili 
+quantitative: l'Anno di riferimento e il Numero Totale di Morti 
+annuali per incidenti stradali (limitatamente alla fascia di età 
+21-24 anni, conducenti). Useremo i dati aggregati in
+ \texttt{morti\_per\_anno}.
+
+\section{Diagramma a dispersione}
 Un diagramma a dispersione (scatter plot) mostra la relazione tra due variabili quantitative.
 
 \begin{center}
@@ -833,8 +890,45 @@ print(scatter_plot_annuale)
     \includegraphics[width=12cm, height=7cm]{Rplot010.png}
 \end{figure}
 
-\subsection{Coefficiente di correlazione campionario}
+\noindent
+Il diagramma a dispersione mostra il numero totale di morti per 
+incidenti stradali (nella fascia di età 21-24 anni, conducenti)
+per ciascun anno dal 2010 al 2023. Ogni punto blu rappresenta 
+un anno. La linea color salmone rappresenta la \textbf{retta di regressione}
+lineare, che suggerisce l'andamento generale dei dati nel tempo.
+L'area rosa attorno alla retta indica l'intervallo di confidenza 
+al 95\% per la stima della media. Visivamente, si osserva una 
+tendenza generale alla diminuzione del numero di morti nel corso 
+degli anni considerati, sebbene con alcune fluttuazioni.
 
-\subsection{Retta di regressione stimata}
+\section{Coefficiente di correlazione campionario}
+Il \textbf{coefficiente di correlazione campionario ($r$)} è una misura normalizzata della forza 
+e della direzione della relazione lineare tra due variabili quantitative. Varia tra -1 e +1.
+\begin{itemize}
+    \item $r = +1$: perfetta correlazione lineare positiva.
+    \item $r = -1$: perfetta correlazione lineare negativa.
+    \item $r \approx 0$: assenza di correlazione lineare (o relazione lineare molto debole).
+    \item Valori vicini a +1 o -1 indicano una forte relazione lineare, mentre valori vicini a 0 indicano una relazione lineare debole o assente.
+\end{itemize}
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo del coefficiente di correlazione tra Anno e Totale Morti
+correlazione_annuale <- cor(morti_per_anno$TIME_PERIOD_Numeric, morti_per_anno$Totale_Morti, use = "complete.obs", method = "pearson")
+print(paste("Coefficiente di correlazione campionario tra Anno e Totale Morti:", round(correlazione_annuale, 4)))
+\end{lstlisting}
+\end{center}
+
+\noindent
+Output:
+\begin{verbatim}
+"Coefficiente di correlazione campionario tra Anno e Totale Morti: -0.9132"
+\end{verbatim}
+\noindent
+Un coefficiente di correlazione campionario di circa -0.9132 indica una \textbf{forte relazione lineare negativa} tra l'anno e il numero totale di morti. \\\\
+\noindent
+Ciò conferma in modo più standardizzato l'osservazione precedente: all'avanzare degli anni, si è osservata una marcata tendenza alla diminuzione del numero di decessi per incidenti stradali tra i conducenti di età compresa tra 21 e 24 anni nel periodo 2010-2023.
+
+
 
 \end{document}
