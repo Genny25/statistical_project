@@ -196,6 +196,61 @@ kurtosis_plot <- ggplot(dati, aes(x = Osservazione)) +
 
 print(kurtosis_plot)
 
+#------------------------------------------------------------------------------------
+
+# Calcolo dei quartili per la variabile 'Osservazione'
+quartili_osservazione <- quantile(dati$Osservazione, probs = c(0.25, 0.50, 0.75), na.rm = TRUE)
+Q1 <- quartili_osservazione[1]
+Q2_mediana <- quartili_osservazione[2] # Coincide con la mediana già calcolata
+Q3 <- quartili_osservazione[3]
+IQR_osservazione <- Q3 - Q1
+
+print(paste("Primo Quartile (Q1) delle osservazioni:", round(Q1, 2)))
+print(paste("Secondo Quartile (Q2) delle osservazioni:", round(Q2_mediana, 2)))
+print(paste("Terzo Quartile (Q3) delle osservazioni:", round(Q3, 2)))
+print(paste("Scarto Interquartile (IQR) delle osservazioni:", round(IQR_osservazione, 2)))
+
+print("Sommario statistico della variabile Osservazione:")
+summary_stats <- summary(dati$Osservazione, na.rm = TRUE)
+print(summary_stats)
+
+# Box plot di Osservazione per tipo di Intersezione
+boxplot_oss_intersezione <- ggplot(dati, aes(x = Intersezione, y = Osservazione, fill = Intersezione)) +
+  geom_boxplot(outlier.colour = "red", na.rm = TRUE) +
+  labs(title = "Box Plot di Osservazione per Tipo di Intersezione",
+       x = "Tipo di Intersezione",
+       y = "Numero di Osservazioni (Decessi)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), # Ruota etichette asse x
+        legend.position = "none") # Rimuove la legenda se i colori sono distintivi
+
+print(boxplot_oss_intersezione)
+
+#-------------------------------------------------------------------------------------------
+
+# Converti gli anni in numerici per la regressione
+if (!is.numeric(morti_per_anno$TIME_PERIOD)) {
+  morti_per_anno$TIME_PERIOD_Numeric <- as.numeric(as.character(morti_per_anno$TIME_PERIOD))
+} else {
+  morti_per_anno$TIME_PERIOD_Numeric <- morti_per_anno$TIME_PERIOD
+}
+
+# Crea lo scatter plot
+scatter_plot_annuale <- ggplot(morti_per_anno, aes(x = TIME_PERIOD_Numeric, y = Totale_Morti)) +
+  geom_point(color = "dodgerblue", size = 3) +
+  geom_smooth(method = "lm", se = FALSE, color = "salmon") + # Aggiunge retta di regressione (opzionale qui, ma utile)
+  labs(title = "Diagramma a Dispersione: Totale Morti vs. Anno",
+       subtitle = "Conducenti 21-24 anni, periodo 2010-2023",
+       x = "Anno",
+       y = "Numero Totale di Morti") +
+  scale_x_continuous(breaks = seq(min(morti_per_anno$TIME_PERIOD_Numeric, na.rm=T),
+                                  max(morti_per_anno$TIME_PERIOD_Numeric, na.rm=T), by = 1)) + # Assicura che gli anni siano interi
+  theme_minimal()
+
+print(scatter_plot_annuale)
+
+
+
 
 
 #write.csv(freq_assolute, "tabella_frequeza.csv", row.names = FALSE)
