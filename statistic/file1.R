@@ -219,7 +219,7 @@ boxplot_oss_intersezione <- ggplot(dati, aes(x = Intersezione, y = Osservazione,
   geom_boxplot(outlier.colour = "red", na.rm = TRUE) +
   labs(title = "Box Plot di Osservazione per Tipo di Intersezione",
        x = "Tipo di Intersezione",
-       y = "Numero di Osservazioni (Decessi)") +
+       y = "Numero di Osservazioni") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), # Ruota etichette asse x
         legend.position = "none") # Rimuove la legenda se i colori sono distintivi
@@ -227,6 +227,38 @@ boxplot_oss_intersezione <- ggplot(dati, aes(x = Intersezione, y = Osservazione,
 print(boxplot_oss_intersezione)
 
 #-------------------------------------------------------------------------------------------
+
+# Disuguaglianza di Chebyshev
+# media_generale e dev_std_campionaria sono stati calcolati precedentemente
+# media_generale = 27.51, dev_std_campionaria = 29.61
+# N_validi = sum(!is.na(dati$Osservazione)) # Numero di osservazioni non NA (79)
+N_validi <- sum(!is.na(dati$Osservazione))
+
+# Per k = 2 deviazioni standard
+k2 <- 2
+lim_inf_k2 <- media_generale - k2 * dev_std_campionaria
+lim_sup_k2 <- media_generale + k2 * dev_std_campionaria
+prop_teorica_k2 <- 1 - 1/k2^2
+prop_osservata_k2 <- sum(dati$Osservazione >= lim_inf_k2 & dati$Osservazione <= lim_sup_k2, na.rm = TRUE) / N_validi
+
+cat(paste0("Disuguaglianza di Chebyshev per k = ", k2, ":\n"))
+cat(paste0("  Intervallo (media +/- ", k2, " * dev_std): [", round(lim_inf_k2, 2), ", ", round(lim_sup_k2, 2), "]\n"))
+cat(paste0("  Proporzione minima teorica di dati nell'intervallo (almeno): ", round(prop_teorica_k2*100, 2), "%\n"))
+cat(paste0("  Proporzione osservata di dati nell'intervallo: ", round(prop_osservata_k2*100, 2), "%\n\n"))
+
+# Per k = 3 deviazioni standard
+k3 <- 3
+lim_inf_k3 <- media_generale - k3 * dev_std_campionaria
+lim_sup_k3 <- media_generale + k3 * dev_std_campionaria
+prop_teorica_k3 <- 1 - 1/k3^2
+prop_osservata_k3 <- sum(dati$Osservazione >= lim_inf_k3 & dati$Osservazione <= lim_sup_k3, na.rm = TRUE) / N_validi
+
+cat(paste0("Disuguaglianza di Chebyshev per k = ", k3, ":\n"))
+cat(paste0("  Intervallo (media +/- ", k3, " * dev_std): [", round(lim_inf_k3, 2), ", ", round(lim_sup_k3, 2), "]\n"))
+cat(paste0("  Proporzione minima teorica di dati nell'intervallo (almeno): ", round(prop_teorica_k3*100, 2), "%\n"))
+cat(paste0("  Proporzione osservata di dati nell'intervallo: ", round(prop_osservata_k3*100, 2), "%\n"))
+
+#--------------------------------------------------------------------------------------
 
 # Converti gli anni in numerici per la regressione
 if (!is.numeric(morti_per_anno$TIME_PERIOD)) {
@@ -249,7 +281,9 @@ scatter_plot_annuale <- ggplot(morti_per_anno, aes(x = TIME_PERIOD_Numeric, y = 
 
 print(scatter_plot_annuale)
 
-
+# Calcolo del coefficiente di correlazione tra Anno e Totale Morti
+correlazione_annuale <- cor(morti_per_anno$TIME_PERIOD_Numeric, morti_per_anno$Totale_Morti, use = "complete.obs", method = "pearson")
+print(paste("Coefficiente di correlazione campionario tra Anno e Totale Morti:", round(correlazione_annuale, 4)))
 
 
 
