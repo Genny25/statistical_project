@@ -318,6 +318,8 @@ ggplot(morti_per_anno, aes(x = TIME_PERIOD, y = Totale_Morti, group = 1)) +
     \includegraphics[width=12cm, height=7cm]{Rplot01.png} % Adatta l'immagine alla larghezza del testo
 \end{figure}
 
+\newpage
+
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 # Crea il grafico a torta
@@ -684,15 +686,155 @@ kurtosis_plot <- ggplot(dati, aes(x = Osservazione)) +
   theme_minimal()
 
 print(kurtosis_plot)
-
 \end{lstlisting}
 \end{center}
-
 
 \begin{figure}[H] 
     \centering
     \includegraphics[width=12cm, height=7cm]{Rplot07.png} 
 \end{figure}
 
+\chapter{Percentili campionari}
+Un percentile k-esimo di un campione di dati è un valore che 
+è maggiore di una percentuale k dei dati e minore della 
+restante percentuale. \\\\
+\noindent
+Il 25-esimo percentile si dice primo quartile, il 50-esimo percentile
+si dice mediana campionaria o secondo quartile, il 75-esimo percentile
+si dice terzo quartile e si denotano con \[Q_{1}, Q_{2}, Q_{3} \].\\
+La differenza tra il terzo e il primo quartile è chiamata scarto interquartile.
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Calcolo dei quartili per la variabile 'Osservazione'
+quartili_osservazione <- quantile(dati$Osservazione, probs = c(0.25, 0.50, 0.75), na.rm = TRUE)
+Q1 <- quartili_osservazione[1]
+Q2_mediana <- quartili_osservazione[2] # Coincide con la mediana gia calcolata
+Q3 <- quartili_osservazione[3]
+IQR_osservazione <- Q3 - Q1
+
+print(paste("Primo Quartile (Q1) delle osservazioni:", round(Q1, 2)))
+print(paste("Secondo Quartile (Q2) delle osservazioni:", round(Q2_mediana, 2)))
+print(paste("Terzo Quartile (Q3) delle osservazioni:", round(Q3, 2)))
+print(paste("Scarto Interquartile (IQR) delle osservazioni:", round(IQR_osservazione, 2)))
+
+print("Sommario statistico della variabile Osservazione:")
+summary_stats <- summary(dati$Osservazione, na.rm = TRUE)
+print(summary_stats)
+\end{lstlisting}
+\end{center}
+\noindent
+Output:
+\begin{verbatim}
+"Primo Quartile (Q1) delle osservazioni: 2"  
+"Secondo Quartile (Q2) delle osservazioni: 15.5"
+"Terzo Quartile (Q3) delle osservazioni: 45"  
+"Scarto Interquartile (IQR) delle osservazioni: 43"
+
+"Sommario statistico della variabile Osservazione:"
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max.   
+1.00    2.00   15.50   27.51   45.00  102.00   
+\end{verbatim}
+Dall'output del sommario, il 25\% delle osservazioni (combinazioni intersezione/anno) 
+ha un numero di decessi inferiore o uguale a 2, il 50\% inferiore o uguale a
+15.5, e il 75\% inferiore o uguale a 45. Lo scarto interquartile
+indica che il 50\% centrale dei dati si distribuisce in un intervallo di ampiezza 
+43.
+
+\section{Box Plot}
+Uno strumento grafico utile per la visualizzare alcuni degli indici 
+rappresentativi dei dati è il box plot.\\\\
+\noindent
+Si ottiene sovrapponendo ad una linea orizzontale che va dal minore al maggiore dei dati,
+un rettangolo che va dal primo al terzo quartile, con una linea verticale che lo divide
+al livello del secondo quartile.
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Box plot di Osservazione per tipo di Intersezione
+Assicurarsi che la colonna Intersezione sia un fattore per un ordinamento corretto (se necessario)
+dati$Intersezione <- factor(dati$Intersezione, levels = c("Rettilineo", "Curva", ...)) # opzionale
+boxplot_oss_intersezione <- ggplot(dati, aes(x = Intersezione, y = Osservazione, fill = Intersezione)) +
+geom_boxplot(outlier.colour = "red", na.rm = TRUE) +
+labs(title = "Box Plot di Osservazione per Tipo di Intersezione",
+x = "Tipo di Intersezione",
+y = "Numero di Osservazioni (Decessi)") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1), # Ruota etichette asse x
+legend.position = "none") # Rimuove la legenda se i colori sono distintivi
+
+print(boxplot_oss_intersezione)
+\end{lstlisting}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm, height=7cm]{Rplot09.png}
+
+\end{figure}
+\noindent
+Il grafico permette di confrontare la distribuzione  del numero di decessi per ciascun 
+tipo di intersezione. \\ Si possono notare differenze nelle mediane, nella variabilità e 
+ nella presenza di 
+ \footnote{Si dice outlier un dato anomalo, ossia molto distante dagli altri dati. Vengono solitamente rappresentati come punti individuali.}outlier 
+ tra le categorie. Ad esempio, i rettilinei potrebbero 
+ mostrare una mediana più alta e una maggiore dispersione.
+
+\section{Disuguaglianza di Chebyshev}
+La disuguaglianza di Chebyshev fornisce una stima della proporzione di dati 
+che si trovano entro un certo numero di deviazioni standard dalla media campionaria,
+indipendentemente dalla forma della distribuzione.
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+#
+\end{lstlisting}
+\end{center}
+
+\noindent
+Output:
+\begin{verbatim}
+
+\end{verbatim}
+
+\section{Dati Bivariati}
+In questa sezione analizzeremo la relazione tra due variabili: il numero di morti e l'anno.
+
+\subsection{Diagramma a dispersione}
+Un diagramma a dispersione (scatter plot) mostra la relazione tra due variabili quantitative.
+
+\begin{center}
+\begin{lstlisting}[breaklines=true]
+# Converti gli anni in numerici per la regressione
+if (!is.numeric(morti_per_anno$TIME_PERIOD)) {
+  morti_per_anno$TIME_PERIOD_Numeric <- as.numeric(as.character(morti_per_anno$TIME_PERIOD))
+} else {
+  morti_per_anno$TIME_PERIOD_Numeric <- morti_per_anno$TIME_PERIOD
+}
+
+# Crea lo scatter plot
+scatter_plot_annuale <- ggplot(morti_per_anno, aes(x = TIME_PERIOD_Numeric, y = Totale_Morti)) +
+  geom_point(color = "dodgerblue", size = 3) +
+  geom_smooth(method = "lm", se = FALSE, color = "salmon") + # Aggiunge retta di regressione (opzionale qui, ma utile)
+  labs(title = "Diagramma a Dispersione: Totale Morti vs. Anno",
+       subtitle = "Conducenti 21-24 anni, periodo 2010-2023",
+       x = "Anno",
+       y = "Numero Totale di Morti") +
+  scale_x_continuous(breaks = seq(min(morti_per_anno$TIME_PERIOD_Numeric, na.rm=T),
+                                  max(morti_per_anno$TIME_PERIOD_Numeric, na.rm=T), by = 1)) + # Assicura che gli anni siano interi
+  theme_minimal()
+
+print(scatter_plot_annuale)
+\end{lstlisting}
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, height=7cm]{Rplot010.png}
+\end{figure}
+
+\subsection{Coefficiente di correlazione campionario}
+
+\subsection{Retta di regressione stimata}
 
 \end{document}

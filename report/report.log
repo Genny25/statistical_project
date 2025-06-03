@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.23)  31 MAY 2025 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.23)  3 JUN 2025 18:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -697,7 +697,7 @@ Package hyperref Info: Link coloring ON on input line 71.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<./Figure/unisa.png, id=75, 745.3446pt x 744.381pt>
+<./Figure/unisa.png, id=103, 745.3446pt x 744.381pt>
 File: ./Figure/unisa.png Graphic file (type png)
 <use ./Figure/unisa.png>
 Package pdftex.def Info: ./Figure/unisa.png  used on input line 77.
@@ -1136,7 +1136,7 @@ File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 
 ] [5]
 Capitolo 3.
-<./Figure/Rplot.png, id=177, 376.2858pt x 234.6366pt>
+<./Figure/Rplot.png, id=212, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot.png Graphic file (type png)
 <use ./Figure/Rplot.png>
 Package pdftex.def Info: ./Figure/Rplot.png  used on input line 231.
@@ -1144,12 +1144,12 @@ Package pdftex.def Info: ./Figure/Rplot.png  used on input line 231.
 [6
 
  <./Figure/Rplot.png>]
-<./Figure/Rplot03.png, id=194, 376.2858pt x 234.6366pt>
+<./Figure/Rplot03.png, id=229, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot03.png Graphic file (type png)
 <use ./Figure/Rplot03.png>
 Package pdftex.def Info: ./Figure/Rplot03.png  used on input line 250.
 (pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
-<./Figure/Rplot04.png, id=195, 376.2858pt x 234.6366pt>
+<./Figure/Rplot04.png, id=230, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot04.png Graphic file (type png)
 <use ./Figure/Rplot04.png>
 Package pdftex.def Info: ./Figure/Rplot04.png  used on input line 269.
@@ -1158,37 +1158,37 @@ Package pdftex.def Info: ./Figure/Rplot04.png  used on input line 269.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./Figure/Rplot03.png>]
-<./Figure/Rplot05.png, id=222, 376.2858pt x 234.6366pt>
+<./Figure/Rplot05.png, id=257, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot05.png Graphic file (type png)
 <use ./Figure/Rplot05.png>
 Package pdftex.def Info: ./Figure/Rplot05.png  used on input line 288.
 (pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
  [8 <./Figure/Rplot04.png> <./Figure/Rplot05.png>]
-<./Figure/Rplot01.png, id=241, 376.2858pt x 234.6366pt>
+<./Figure/Rplot01.png, id=276, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot01.png Graphic file (type png)
 <use ./Figure/Rplot01.png>
 Package pdftex.def Info: ./Figure/Rplot01.png  used on input line 318.
 (pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
  [9 <./Figure/Rplot01.png>]
-<./Figure/Rplot08.png, id=270, 376.2858pt x 234.6366pt>
+<./Figure/Rplot08.png, id=303, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot08.png Graphic file (type png)
 <use ./Figure/Rplot08.png>
-Package pdftex.def Info: ./Figure/Rplot08.png  used on input line 340.
+Package pdftex.def Info: ./Figure/Rplot08.png  used on input line 342.
 (pdftex.def)             Requested size: 369.88866pt x 227.62944pt.
 
-Overfull \hbox (24.88866pt too wide) in paragraph at lines 340--341
+Overfull \hbox (24.88866pt too wide) in paragraph at lines 342--343
  [][] 
  []
 
 [10 <./Figure/Rplot08.png>]
 Capitolo 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--358
+Underfull \hbox (badness 10000) in paragraph at lines 348--360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--358
+Underfull \hbox (badness 10000) in paragraph at lines 348--360
 
  []
 
@@ -1201,39 +1201,68 @@ Capitolo 5.
 ] [14] [15]
 Capitolo 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 593--598
+Underfull \hbox (badness 10000) in paragraph at lines 595--600
 
  []
 
 [16
 
 ]
-<./Figure/Rplot06.png, id=362, 376.2858pt x 234.6366pt>
+<./Figure/Rplot06.png, id=397, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot06.png Graphic file (type png)
 <use ./Figure/Rplot06.png>
-Package pdftex.def Info: ./Figure/Rplot06.png  used on input line 627.
+Package pdftex.def Info: ./Figure/Rplot06.png  used on input line 629.
 (pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
  [17 <./Figure/Rplot06.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 654--668
+Underfull \hbox (badness 10000) in paragraph at lines 656--670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--668
+Underfull \hbox (badness 10000) in paragraph at lines 656--670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--668
+Underfull \hbox (badness 10000) in paragraph at lines 656--670
 
  []
 
 [18]
-<./Figure/Rplot07.png, id=401, 376.2858pt x 234.6366pt>
+<./Figure/Rplot07.png, id=436, 376.2858pt x 234.6366pt>
 File: ./Figure/Rplot07.png Graphic file (type png)
 <use ./Figure/Rplot07.png>
 Package pdftex.def Info: ./Figure/Rplot07.png  used on input line 694.
 (pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
+ [19 <./Figure/Rplot07.png>]
+Capitolo 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--704
+
+ []
+
+[20
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 745--751
+
+ []
+
+<./Figure/Rplot09.png, id=473, 376.2858pt x 234.6366pt>
+File: ./Figure/Rplot09.png Graphic file (type png)
+<use ./Figure/Rplot09.png>
+Package pdftex.def Info: ./Figure/Rplot09.png  used on input line 772.
+(pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
+[21] [22 <./Figure/Rplot09.png>]
+<./Figure/Rplot010.png, id=502, 376.2858pt x 234.6366pt>
+File: ./Figure/Rplot010.png Graphic file (type png)
+<use ./Figure/Rplot010.png>
+Package pdftex.def Info: ./Figure/Rplot010.png  used on input line 833.
+(pdftex.def)             Requested size: 341.43303pt x 199.1771pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the report.maf file.
@@ -1255,26 +1284,26 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the report.log file.
 
-[19 <./Figure/Rplot07.png>] (report.aux)
+[24 <./Figure/Rplot010.png>] (report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 6D00432FAE712BEDF815678D42DC590B;2919.
+(rerunfilecheck)             Checksum: 089AC1F5F80E36A90F35DBDE39C7E10D;4158.
  ) 
 Here is how much of TeX's memory you used:
- 20856 strings out of 474424
- 332505 string characters out of 5741739
- 2121496 words of memory out of 5000000
- 42630 multiletter control sequences out of 15000+600000
- 571942 words of font info for 87 fonts, out of 8000000 for 9000
+ 20984 strings out of 474424
+ 334535 string characters out of 5741739
+ 2118496 words of memory out of 5000000
+ 42690 multiletter control sequences out of 15000+600000
+ 572249 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,11n,79p,413b,2797s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\genna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\genna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/genna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (20 pages, 1841746 bytes).
+Output written on report.pdf (25 pages, 1890777 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 239 named destinations out of 1000 (max. 500000)
- 190 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 307 named destinations out of 1000 (max. 500000)
+ 256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
