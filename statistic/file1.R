@@ -121,7 +121,7 @@ find_mode <- function(x) {
   u[tab == max(tab)]
   }
 
-find_mode(dati)
+find_mode(dati$Osservazione)
 
 #---------------------------------------------------------------------------
 
