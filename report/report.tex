@@ -102,8 +102,7 @@
 \section{Problematica}
 Gli \textbf{incidenti stradali} costituiscono una delle principali emergenze 
 di sanità pubblica, in quanto responsabili ogni anno di un elevato 
-numero di decessi, in particolare tra i giovani, e di gravi conseguenze
- in termini di disabilità temporanee e permanenti, oltre al drammatico impatto umano e psicologico sulle vittime e 
+numero di decessi, in particolare tra i giovani, oltre al drammatico impatto umano e psicologico sulle vittime e 
  sulle loro famiglie. 
 \noindent
 
@@ -112,15 +111,14 @@ Il progetto consiste nel realizzare un’indagine statistica \footnote{\url{http
 avvenuti su una strada aperta alla circolazione pubblica e che hanno causato morti (entro il 30° giorno) con il coinvolgimento 
 di almeno un veicolo. \\\\
 \noindent
-La rilevazione è condotta correntemente dall’Istat, con la compartecipazione dell'ACI e di numerosi Enti pubblici istituzionali, 
-è a carattere totale e a cadenza mensile (inserita tra le rilevazioni di interesse pubblico nel Programma Statistico Nazionale - PSN - IST00142). \\\\
+La rilevazione è condotta correntemente dall’Istat, con la compartecipazione dell'ACI (Automobile Club d'Italia) e di numerosi Enti pubblici istituzionali. \\\\
 \noindent
 Per l'analisi dei dati è stato scelto l'ambiente di calcolo statistico \textbf{R}. \\
 R fornisce un'ampia varietà di tecniche statistiche (modellazione lineare e non lineare, test statistici classici, analisi delle serie temporali, classificazione, \dots)
 e grafiche ed è altamente estensibile.\\\\
 \noindent
 Uno dei punti di forza di R è la facilità con cui possono essere prodotti grafici ben progettati e di qualità per la pubblicazione, 
-compresi simboli matematici e formule se necessario.\\\\
+compresi simboli matematici e formule se necessario.\\\\\\
 \noindent
 Per semplificare l'analisi, si è scelto di lavorare non sull'intero dataset, 
 ma su un sottoinsieme filtrato di dati, relativo alle \textbf{morti per incidenti stradali che riguardano solo i conducenti di età compresa tra i 21 e i 24 anni.}\\\\
@@ -128,9 +126,28 @@ ma su un sottoinsieme filtrato di dati, relativo alle \textbf{morti per incident
 Per approfondire l'analisi con dati dettagliati e specifici, è possibile consultare il dataset direttamente sul sito dell'ISTAT al seguente link:
 \url{https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,Z0810HEA,1.0/HEA_ROAD/IT1,41_270_DF_DCIS_MORTIFERITISTR1_1,1.0}\\\\
 \noindent
-Il dataset in formato \textbf{CSV(Comma-Separated Values)} è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\\\
+Il dataset in formato \textbf{CSV(Comma-Separated Values)} già filtrato è stato ottenuto dalla fonte ISTAT tramite il link indicato, assicurando così l'affidabilità dei dati.\\\\
 Il formato scelto (CSV) permette un'agevole manipolazione dei dati, essendo compatibile con la maggior parte dei software statistici e
-dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.\\
+dei fogli di calcolo, ottimizzando l'analisi e la visualizzazione delle informazioni.\\\\
+\noindent
+Successivamente, utilizzando il software R, sono stati applicati
+ ulteriori criteri di selezione per estrarre esclusivamente i dati 
+ rilevanti ai fini dell’analisi.\\
+
+ \begin{center}
+\begin{lstlisting}[breaklines=true]
+# inclusione librerie
+library("tidyverse")
+require("tidyverse")
+library("dplyr")
+
+# viene caricato il dataset
+dati <- read.csv("dati_istat.csv")
+
+# filtraggio dati
+dati <- dati %>% select(Intersezione, TIME_PERIOD, Osservazione) 
+\end{lstlisting}  
+\end{center}
 
 \begin{table}[!ht]
 \centering
@@ -157,16 +174,6 @@ Galleria & 1 & 1 & 1 & 1 & -- & 1 & 1 & 1 & -- & -- & 3 & 1 & -- & -- \\ \hline
 
 \begin{center}
 \begin{lstlisting}[breaklines=true]
-# inclusione librerie
-library("tidyverse")
-require("tidyverse")
-library("dplyr")
-
-# viene caricato il dataset
-dati <- read.csv("dati_istat.csv")
-
-# filtraggio dati
-dati <- dati %>% select(Intersezione, TIME_PERIOD, Osservazione) 
 dati <- dati %>% 
   filter(Intersezione != "Totale") 
 
@@ -190,7 +197,7 @@ freq_assolute$Frequenza_Cumulata_Relativa <- freq_assolute$Frequenza_Cumulata_As
 print(freq_assolute)
 \end{lstlisting}  
 \end{center}
-
+\newpage
 \noindent
 L'output generato dal codice R riportato è sintetizzato
  nella seguente tabella:
@@ -211,6 +218,27 @@ Galleria & 11 & 0.0051 & 2146 & 1.0000 \\ \hline
 \end{tabularx}
 \end{table}
 \normalsize
+
+\noindent
+L'analisi di frequenza, fornisce una chiara mappatura della 
+distribuzione degli incidenti stradali analizzati, per un totale 
+di 2.146 casi. \\\\
+\noindent
+Dai dati emerge in modo netto che la tipologia di strada più a 
+rischio è il rettilineo, che da solo rappresenta oltre la metà 
+degli incidenti totali (1.102 casi, pari al 51,4\%). 
+Questo dato è di particolare rilevanza, in quanto concentra la 
+maggior parte del rischio in un contesto spesso percepito come meno 
+pericoloso.\\\\
+\noindent
+L'analisi cumulativa rafforza questa evidenza. Le prime due categorie,
+ Rettilineo e Curva, coprono complessivamente il 78,2\% di tutti gli 
+ incidenti. Aggiungendo gli incroci, si arriva a spiegare oltre il 95\% 
+ del fenomeno (95,7\%).\\\\
+\noindent
+Le restanti tipologie di infrastruttura (dosso/pendenza/strettoia,
+ rotatoria, galleria) hanno un'incidenza marginale, contribuendo 
+ complessivamente per meno del 5\% al totale degli eventi.
 
 \chapter{Rappresentazione dei dati mediante grafici}
 \begin{center}
@@ -288,7 +316,7 @@ barplot(freq_assolute$Frequenza_Cumulata_Relativa,
     \includegraphics[width=12cm, height=7cm]{Rplot05.png} % Adatta l'immagine alla larghezza del testo
 \end{figure}
 
-
+Altri grafici:
 \begin{center}
 \begin{lstlisting}[breaklines=true]
 # Converti TIME_PERIOD in fattore per mantenere l'ordine originale
@@ -346,8 +374,7 @@ ggplot(freq_assolute, aes(x = "", y = Frequenza_Assoluta, fill = Intersezione)) 
 
 \chapter{Indici di posizione}
 In questo capitolo verranno calcolati gli \textbf{indici di posizione} 
-sulla variabile numerica \texttt{Osservazione} del dataset 
-\texttt{dati}. \\\\
+sulla variabile numerica \texttt{Osservazione}. \\\\
 \noindent
 Questa variabile rappresenta il numero di morti
  registrato per una specifica combinazione di tipo di intersezione 
@@ -356,7 +383,7 @@ Questa variabile rappresenta il numero di morti
  \noindent
  Gli indici di posizione(o di tendenza generale) sono misure che consentono di 
  sintetizzare i dati osservati con un solo valore numerico che sia rappresentativo dei dati stessi.
- Gli indici di posizone più adoperati sono tre
+ Gli indici di posizone più adoperati sono tre:
 \begin{itemize}
   \item media
   \item mediana
@@ -364,7 +391,7 @@ Questa variabile rappresenta il numero di morti
 \end{itemize}
 
 \section{Media campionaria}
-La \textbf{media campionaria} è la somma di tutte le osservazioni divisa per il numero di osservazioni.
+La \textbf{media campionaria} è la somma di tutte le osservazioni divisa per il numero di esse.
  Fornisce una misura del valore centrale della distribuzione.
 \begin{center}
 \begin{lstlisting}[breaklines=true]
@@ -439,7 +466,7 @@ print(paste("Varianza campionaria delle osservazioni:", round(varianza_campionar
 \end{lstlisting}
 \end{center}
 \noindent
-Output (valore basato sulla media e mediana fornite, è una stima):
+Output:
 \begin{verbatim}
 "Varianza campionaria delle osservazioni: 859.52" 
 \end{verbatim}
@@ -469,9 +496,9 @@ decessi si discostano dalla media campionaria (27.51) di
 circa 29.61 unità.
     
 \section{Scarto medio assoluto}
-Lo \textbf{scarto medio assoluto (Mean Absolute Deviation, MAD)}
- dalla media è la media delle deviazioni assolute (cioè, senza segno)
-  dei dati dalla loro media. Come la deviazione standard, 
+Lo \textbf{scarto medio assoluto}
+è dato dalla media aritmetica degli scarti assoluti dalla media campionaria.
+ Come la deviazione standard, 
   misura la dispersione media, ma è meno sensibile ai valori 
   anomali perché non eleva al quadrato gli scarti.
 \begin{center}
@@ -870,8 +897,7 @@ incidenti stradali (nella fascia di età 21-24 anni, conducenti)
 per ciascun anno dal 2010 al 2023. Ogni punto blu rappresenta 
 un anno. La linea color salmone rappresenta la \textbf{retta di regressione}
 lineare, che suggerisce l'andamento generale dei dati nel tempo.
-L'area rosa attorno alla retta indica l'intervallo di confidenza 
-al 95\% per la stima della media. Visivamente, si osserva una 
+Visivamente, si osserva una 
 tendenza generale alla diminuzione del numero di morti nel corso 
 degli anni considerati, sebbene con alcune fluttuazioni.
 
