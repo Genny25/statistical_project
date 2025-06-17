@@ -102,7 +102,7 @@
 \section{Problematica}
 Gli \textbf{incidenti stradali} costituiscono una delle principali emergenze 
 di sanità pubblica, in quanto responsabili ogni anno di un elevato 
-numero di decessi, in particolare tra i giovani, oltre al drammatico impatto umano e psicologico sulle vittime e 
+numero di decessi, in particolare tra i giovani, oltre al drammatico impatto umano e psicologico 
  sulle loro famiglie. 
 \noindent
 
@@ -140,6 +140,7 @@ Successivamente, utilizzando il software R, sono stati applicati
 library("tidyverse")
 require("tidyverse")
 library("dplyr")
+library(moments)
 
 # viene caricato il dataset
 dati <- read.csv("dati_istat.csv")
@@ -195,6 +196,9 @@ print(freq_assolute)
 # 4. Frequenze cumulate relative
 freq_assolute$Frequenza_Cumulata_Relativa <- freq_assolute$Frequenza_Cumulata_Assoluta / totale
 print(freq_assolute)
+
+# Per esportare i risultati
+#write.csv(freq_assolute, "tabella_frequeza.csv", row.names = FALSE)
 \end{lstlisting}  
 \end{center}
 \newpage
