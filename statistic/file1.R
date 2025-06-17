@@ -12,7 +12,7 @@ dati <- dati %>% select(Intersezione, TIME_PERIOD, Osservazione)
 dati <- dati %>% 
   filter(Intersezione != "Totale") 
 
-#-----------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 # 1. Frequenze assolute per intersezione dell'incidente
 freq_assolute <- aggregate(Osservazione ~ Intersezione, data=dati, sum)
@@ -33,7 +33,7 @@ print(freq_assolute)
 freq_assolute$Frequenza_Cumulata_Relativa <- freq_assolute$Frequenza_Cumulata_Assoluta / totale
 print(freq_assolute)
 
-#-----------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 # 1. Grafico frequenza assolute
 barplot(freq_assolute$Frequenza_Assoluta, 
@@ -107,7 +107,7 @@ ggplot(freq_assolute, aes(x = "", y = Frequenza_Assoluta, fill = Intersezione)) 
             position = position_stack(vjust = 0.5),
             size = 3)
 
-#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 media_generale <- mean(dati$Osservazione, na.rm = TRUE)
 print(paste("Media campionaria generale delle osservazioni:", round(media_generale, 2)))
@@ -123,7 +123,7 @@ find_mode <- function(x) {
 
 find_mode(dati$Osservazione)
 
-#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 # Calcolo della varianza sulla variabile 'Osservazione'.
 varianza_campionaria <- var(dati$Osservazione, na.rm = TRUE)
@@ -153,7 +153,7 @@ dev_std_oss <- sd(dati$Osservazione, na.rm = TRUE)
 coeff_variazione <- (dev_std_oss / abs(media_oss)) * 100 # abs() per media se potesse essere negativa
 print(paste("Coefficiente di variazione delle osservazioni:", round(coeff_variazione, 2), "%"))
 
-#--------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 # Calcolo dell'indice di asimmetria per 'Osservazione'.
 indice_asimmetria <- skewness(dati$Osservazione, na.rm = TRUE)
@@ -196,7 +196,7 @@ kurtosis_plot <- ggplot(dati, aes(x = Osservazione)) +
 
 print(kurtosis_plot)
 
-#------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 # Calcolo dei quartili per la variabile 'Osservazione'
 quartili_osservazione <- quantile(dati$Osservazione, probs = c(0.25, 0.50, 0.75), na.rm = TRUE)
@@ -226,7 +226,7 @@ boxplot_oss_intersezione <- ggplot(dati, aes(x = Intersezione, y = Osservazione,
 
 print(boxplot_oss_intersezione)
 
-#-------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 # Disuguaglianza di Chebyshev
 # media_generale e dev_std_campionaria sono stati calcolati precedentemente
@@ -285,7 +285,6 @@ print(scatter_plot_annuale)
 correlazione_annuale <- cor(morti_per_anno$TIME_PERIOD_Numeric, morti_per_anno$Totale_Morti, use = "complete.obs", method = "pearson")
 print(paste("Coefficiente di correlazione campionario tra Anno e Totale Morti:", round(correlazione_annuale, 4)))
 
-
+#---------------------------------------------------------------------------------------------------------
 
 #write.csv(freq_assolute, "tabella_frequeza.csv", row.names = FALSE)
-
